@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "JTNZ/SZ2064sXuXYVl1Ph0K80unwBE1l84ke++SJ2AAHqyt4aBM8rMA1FsgW/O1Gj4ams/BxVH8Rom38S49OuA==",
+  "success": true,
+  "projectFilePath": "C:\\projects\\MyBus\\MyBus.App\\MyBus.App.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\simpleinjector\\5.1.0\\simpleinjector.5.1.0.nupkg.sha512",
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime\\4.1.0\\system.runtime.4.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
