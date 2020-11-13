@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using MessagerBus;
 
-namespace MyBus.Tests.Commands
+namespace My.Tests.Queries
 {
-    public class RecoverCommand : ICommand
+    public class GetProductQuery : IQuery<string>
     {
     }
 }

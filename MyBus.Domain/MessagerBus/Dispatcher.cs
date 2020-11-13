@@ -1,13 +1,13 @@
-﻿using MessagerBus.Dispatcher;
-using MessagerBus.Queries;
+﻿using System;
+using MessagerBus.DispatcherPattern;
 
 namespace MessagerBus
 {
-    public class DispatcherBus : IDispatcherBus
+    public class Dispatcher : IDispatcher
     {
-        private readonly IDispatcher _dispatcher;
+        private readonly IMessager _dispatcher;
 
-        public DispatcherBus(IDispatcher dispatcher)
+        public Dispatcher(IMessager dispatcher)
         {
             _dispatcher = dispatcher;
         }
@@ -29,7 +29,7 @@ namespace MessagerBus
 
         public void Execute(ICommand _command)
         {
-            _dispatcher.Execute(_command);
+            _dispatcher.Execute((ICommand<Result>)_command);
         }
 
         public TResult Query<TResult>(IQuery<TResult> _query)

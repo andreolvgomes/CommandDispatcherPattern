@@ -1,7 +1,7 @@
-﻿using My.Tests.Commands;
+﻿using MessagerBus;
+using MessagerBus.DispatcherPattern;
 using My.Tests.Events;
-using MessagerBus;
-using MessagerBus.Dispatcher;
+using My.Tests.Queries;
 using MyBus.Tests.Commands;
 using MyBus.Tests.Events;
 using SimpleInjector;
@@ -31,18 +31,15 @@ namespace MyBus.App
 
         public void Init()
         {
-            _container.Register<IDispatcherBus, DispatcherBus>();
-
-            //_container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
-            //_container.Register(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });
-
+            _container.Register<IMessager, Messager>();
             _container.Register<IDispatcher, Dispatcher>();
 
-            _container.Register(typeof(ICommandHandler<DeleteCommand>), typeof(CommandHandlers));
-            _container.Register(typeof(ICommandHandler<CreateNewCommand, bool>), typeof(CommandHandlers));
-            _container.Register(typeof(ICommandHandler<DesmebrarProduto>), typeof(CommandHandlers));
+            //_container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
+            //_container.Register(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });            
 
-            _container.Register(typeof(IEventHandler<DesmembradoProdutoEvent>), typeof(EventsHandlers));
+            _container.Register(typeof(ICommandHandler<CreateNewCommand, bool>), typeof(CommandsHandlers));
+            _container.Register(typeof(IEventHandler<CreateNewEvent>), typeof(EventsHandlers));
+            _container.Register(typeof(IQueryHandler<GetProductQuery, string>), typeof(QueriesHandlers));
         }
 
         public T Get<T>() where T : class

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MessagerBus.Queries;
 
-namespace MessagerBus.Interfaces
+namespace MessagerBus.DispatcherPattern.Interfaces
 {
     public interface IQuerier
     {

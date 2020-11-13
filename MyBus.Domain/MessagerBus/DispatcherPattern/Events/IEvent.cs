@@ -1,4 +1,6 @@
-﻿namespace MessagerBus
+﻿using System;
+
+namespace MessagerBus
 {
     public interface IEvent : IEvent<Result> { }
 

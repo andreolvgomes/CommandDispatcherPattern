@@ -1,10 +1,8 @@
-﻿using MessagerBus.Interfaces;
-using MessagerBus.Queries;
-using SimpleInjector;
+﻿using SimpleInjector;
 
-namespace MessagerBus.Dispatcher
+namespace MessagerBus.DispatcherPattern
 {
-    public class Dispatcher : IDispatcher
+    public class Messager : IMessager
     {
         private readonly Container _container;
 
@@ -12,7 +10,7 @@ namespace MessagerBus.Dispatcher
         /// Dispatcher
         /// </summary>
         /// <param name="container"></param>
-        public Dispatcher(Container container)
+        public Messager(Container container)
         {
             _container = container;
         }

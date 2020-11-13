@@ -1,4 +1,6 @@
-﻿namespace MessagerBus
+﻿using System;
+
+namespace MessagerBus
 {
     public interface ICommandHandler<in TCommand> : ICommandHandler<TCommand, Result>
         where TCommand : ICommand

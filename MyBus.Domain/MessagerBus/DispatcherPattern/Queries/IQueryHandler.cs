@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MessagerBus.Queries
+﻿namespace MessagerBus
 {
     public interface IQueryHandler<in TQuery, TResult>
         where TQuery : IQuery<TResult>

@@ -1,5 +1,6 @@
-﻿using My.Tests.Commands;
-using MessagerBus;
+﻿using MessagerBus;
+using My.Tests.Events;
+using My.Tests.Queries;
 using MyBus.Tests.Commands;
 
 namespace MyBus.App
@@ -10,9 +11,11 @@ namespace MyBus.App
         {          
             IoC.Ins.Init();
 
-            IDispatcherBus dispatcher = IoC.Ins.Get<IDispatcherBus>();
+            IDispatcher dispatcher = IoC.Ins.Get<IDispatcher>();
 
-            dispatcher.Execute(new DesmebrarProduto());
+            dispatcher.Execute(new CreateNewCommand());
+            dispatcher.Event(new CreateNewEvent());
+            dispatcher.Query<string>(new GetProductQuery());
         }
     }
 }

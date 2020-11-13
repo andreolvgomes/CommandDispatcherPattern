@@ -1,9 +1,9 @@
 ﻿using MessagerBus;
-using MessagerBus.Queries;
+using MessagerBus.DispatcherPattern;
 
 namespace MessagerBus
 {
-    public interface IDispatcherBus
+    public interface IDispatcher
     {
         TResult Event<TResult>(IEvent<TResult> _event);
         void Event(IEvent _event);

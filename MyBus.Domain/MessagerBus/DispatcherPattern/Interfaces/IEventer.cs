@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MessagerBus.Interfaces
+namespace MessagerBus.DispatcherPattern.Interfaces
 {
     public interface IEventer
     {
