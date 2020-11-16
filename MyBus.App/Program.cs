@@ -9,9 +9,9 @@ namespace MyBus.App
     {
         public static void Main(string[] args)
         {          
-            IoC.Ins.Init();
+            IoCContainer.Ins.Init();
 
-            IDispatcher dispatcher = IoC.Ins.Get<IDispatcher>();
+            IDispatcher dispatcher = IoCContainer.Ins.Get<IDispatcher>();
 
             dispatcher.Command(new CreateNewCommand());
             dispatcher.Event(new CreateNewEvent());

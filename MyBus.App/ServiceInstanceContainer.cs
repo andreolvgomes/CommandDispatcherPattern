@@ -6,11 +6,11 @@ using SimpleInjector;
 
 namespace MyBus.App
 {
-    public class ServiceInstance : IServiceInstance
+    public class ServiceInstanceContainer : IServiceInstance
     {
         private readonly Container _container;
 
-        public ServiceInstance(Container container)
+        public ServiceInstanceContainer(Container container)
         {
             _container = container;
         }

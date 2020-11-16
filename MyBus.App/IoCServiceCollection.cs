@@ -34,7 +34,7 @@ namespace MyBus.App
             ServiceCollection service = new ServiceCollection();
             service.AddScoped<IMessager, Messager>();
             service.AddScoped<IDispatcher, Dispatcher>();
-            service.AddScoped<IServiceInstance, ServiceInstance>();
+            service.AddScoped<IServiceInstance, ServiceInstanceContainer>();
 
             //service.AddScoped(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
             //service.AddScoped(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });

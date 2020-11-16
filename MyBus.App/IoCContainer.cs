@@ -8,23 +8,23 @@ using SimpleInjector;
 
 namespace MyBus.App
 {
-    public class IoC
+    public class IoCContainer
     {
-        private static IoC _instance = null;
+        private static IoCContainer _instance = null;
 
-        public static IoC Ins
+        public static IoCContainer Ins
         {
             get
             {
                 if (_instance == null)
-                    _instance = new IoC();
+                    _instance = new IoCContainer();
                 return _instance;
             }
         }
 
         private readonly Container _container;
 
-        private IoC()
+        private IoCContainer()
         {
             _container = new Container();
         }
@@ -33,7 +33,7 @@ namespace MyBus.App
         {
             _container.Register<IMessager, Messager>();
             _container.Register<IDispatcher, Dispatcher>();
-            _container.Register<IServiceInstance, ServiceInstance>();
+            _container.Register<IServiceInstance, ServiceInstanceContainer>();
 
             //_container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
             //_container.Register(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });
