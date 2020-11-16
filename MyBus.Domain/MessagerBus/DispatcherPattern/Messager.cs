@@ -56,7 +56,7 @@ namespace MessagerBus.DispatcherPattern
         /// Execute message command
         /// </summary>
         /// <param name="command"></param>
-        public void Execute(ICommand command)
+        public void Execute(IFunction command)
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             dynamic handler = _container.GetInstance(handlerType);

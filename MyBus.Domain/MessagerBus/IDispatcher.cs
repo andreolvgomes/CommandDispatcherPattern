@@ -9,7 +9,7 @@ namespace MessagerBus
         void Event(IEvent _event);
 
         TResult Execute<TResult>(ICommand<TResult> _command);
-        void Execute(ICommand _command);
+        void Execute(IFunction _command);
 
         TResult Query<TResult>(IQuery<TResult> _query);
     }

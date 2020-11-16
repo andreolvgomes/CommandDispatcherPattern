@@ -27,7 +27,7 @@ namespace MessagerBus
             return _dispatcher.Execute<TResult>(_command);
         }
 
-        public void Execute(ICommand _command)
+        public void Execute(IFunction _command)
         {
             _dispatcher.Execute((ICommand<Result>)_command);
         }
