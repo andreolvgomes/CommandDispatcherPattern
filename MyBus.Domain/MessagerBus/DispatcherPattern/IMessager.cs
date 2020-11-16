@@ -2,7 +2,7 @@
 
 namespace MessagerBus.DispatcherPattern
 {
-    public interface IMessager : IExecuter, IEventer, IQuerier
+    public interface IMessager : IExecuter, IEventer, IQuerier, ICommander
     {
     }
 }

@@ -22,19 +22,29 @@ namespace MessagerBus
             _dispatcher.Event(_event);
         }
 
-        public TResult Execute<TResult>(ICommand<TResult> _command)
+        public TResult Command<TResult>(ICommand<TResult> command)
         {
-            return _dispatcher.Execute<TResult>(_command);
+            return _dispatcher.Command<TResult>(command);
         }
 
-        public void Execute(IFunction _command)
+        public void Command(IFunction command)
         {
-            _dispatcher.Execute((ICommand<Result>)_command);
+            _dispatcher.Command((ICommand<Result>)command);
         }
 
-        public TResult Query<TResult>(IQuery<TResult> _query)
+        public TResult Query<TResult>(IQuery<TResult> query)
         {
-            return _dispatcher.Query<TResult>(_query);
+            return _dispatcher.Query<TResult>(query);
+        }
+
+        public TResult Function<TResult>(IFunction<TResult> function)
+        {
+            return _dispatcher.Function<TResult>(function);
+        }
+
+        public void Function(IFunction function)
+        {
+            _dispatcher.Function(function);
         }
     }
 }

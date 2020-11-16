@@ -6,7 +6,7 @@ namespace MessagerBus.DispatcherPattern.Interfaces
 {
     public interface IExecuter
     {
-        TResult Execute<TResult>(ICommand<TResult> command);
-        void Execute(IFunction command);
+        TResult Function<TResult>(IFunction<TResult> function);
+        void Function(IFunction function);
     }
 }

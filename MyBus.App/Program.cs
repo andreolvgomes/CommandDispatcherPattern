@@ -13,7 +13,7 @@ namespace MyBus.App
 
             IDispatcher dispatcher = IoC.Ins.Get<IDispatcher>();
 
-            dispatcher.Execute(new CreateNewCommand());
+            dispatcher.Command(new CreateNewCommand());
             dispatcher.Event(new CreateNewEvent());
             dispatcher.Query<string>(new GetProductQuery());
         }
