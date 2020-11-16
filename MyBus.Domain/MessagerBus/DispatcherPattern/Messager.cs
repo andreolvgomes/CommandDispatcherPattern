@@ -4,13 +4,13 @@ namespace MessagerBus.DispatcherPattern
 {
     public class Messager : IMessager
     {
-        private readonly Container _container;
+        private readonly IServiceInstance _container;
 
         /// <summary>
         /// Dispatcher
         /// </summary>
         /// <param name="container"></param>
-        public Messager(Container container)
+        public Messager(IServiceInstance container)
         {
             _container = container;
         }

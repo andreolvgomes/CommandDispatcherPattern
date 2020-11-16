@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "JTNZ/SZ2064sXuXYVl1Ph0K80unwBE1l84ke++SJ2AAHqyt4aBM8rMA1FsgW/O1Gj4ams/BxVH8Rom38S49OuA==",
+  "dgSpecHash": "NSmPKwChjZkfYtvk+eJtah6HvKMbAe55B5FBi01susT68fgfakf8t2NlHKzjnXzNBgSc2VpBjUXliWEHj+VRgA==",
   "success": true,
   "projectFilePath": "C:\\projects\\MyBus\\MyBus.App\\MyBus.App.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\simpleinjector\\5.1.0\\simpleinjector.5.1.0.nupkg.sha512",

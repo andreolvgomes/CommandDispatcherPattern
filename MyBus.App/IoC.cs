@@ -33,9 +33,10 @@ namespace MyBus.App
         {
             _container.Register<IMessager, Messager>();
             _container.Register<IDispatcher, Dispatcher>();
+            _container.Register<IServiceInstance, ServiceInstance>();
 
             //_container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
-            //_container.Register(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });            
+            //_container.Register(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });
 
             _container.Register(typeof(ICommandHandler<CreateNewCommand, bool>), typeof(CommandsHandlers));
             _container.Register(typeof(IEventHandler<CreateNewEvent>), typeof(EventsHandlers));

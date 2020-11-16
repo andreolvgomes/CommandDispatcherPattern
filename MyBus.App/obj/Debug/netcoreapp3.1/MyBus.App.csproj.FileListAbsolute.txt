@@ -39,7 +39,6 @@ C:\projects\MyBus\App\obj\Debug\netcoreapp3.1\MyBus.App.genruntimeconfig.cache
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csprojAssemblyReference.cache
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.AssemblyInfoInputs.cache
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.AssemblyInfo.cs
-C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CoreCompileInputs.cache
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.dll
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.pdb
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\MyBus.App.exe
@@ -55,3 +54,6 @@ C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\MyBus.Domain.pdb
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\My.Tests.pdb
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CopyComplete
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.genruntimeconfig.cache
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CoreCompileInputs.cache
