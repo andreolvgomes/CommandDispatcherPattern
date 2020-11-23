@@ -8,7 +8,8 @@ namespace MyBus.App
     public class Program
     {
         public static void Main(string[] args)
-        {          
+        {
+            IoCServiceCollection.Ins.Init();
             IoCContainer.Ins.Init();
 
             IDispatcher dispatcher = IoCContainer.Ins.Get<IDispatcher>();

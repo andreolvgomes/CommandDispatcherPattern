@@ -35,6 +35,7 @@ namespace MyBus.App
             service.AddScoped<IMessager, Messager>();
             service.AddScoped<IDispatcher, Dispatcher>();
             service.AddScoped<IServiceInstance, ServiceInstanceContainer>();
+            service.AddScoped<ClassWithDisposable>();
 
             //service.AddScoped(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
             //service.AddScoped(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });
@@ -50,6 +51,8 @@ namespace MyBus.App
             //    IService serv = scope.ServiceProvider.GetService<IService>();
             //    serv.NewService();
             //}
+
+            var test = _serviceProvider.GetService<ClassWithDisposable>();
         }
 
         public T Get<T>() where T : class
