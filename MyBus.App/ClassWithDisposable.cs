@@ -4,11 +4,16 @@ using System.Text;
 
 namespace MyBus.App
 {
-    public class ClassWithDisposable : IDisposable
+    public abstract class IClassWithDisposable: IDisposable
     {
         public void Dispose()
         {
-            
+
         }
+    }
+
+    public class ClassWithDisposable : IClassWithDisposable
+    {
+
     }
 }

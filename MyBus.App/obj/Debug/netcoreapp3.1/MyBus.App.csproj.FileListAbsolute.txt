@@ -56,4 +56,5 @@ C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CopyComplet
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.genruntimeconfig.cache
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Ninject.dll
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CoreCompileInputs.cache

@@ -111,6 +111,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Ninject": {
+              "target": "Package",
+              "version": "[3.3.4, )"
+            },
             "SimpleInjector": {
               "target": "Package",
               "version": "[5.1.0, )"
