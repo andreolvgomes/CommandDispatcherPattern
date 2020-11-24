@@ -8,6 +8,14 @@ using Ninject.Activation.Blocks;
 
 namespace MyBus.App
 {
+    public static class JJJ
+    {
+        public static void Add<T>(this StandardKernel bind)
+        {
+            bind.Bind<T>().To<T>();
+        }
+    }
+
     public class Program
     {
         public static void Main(string[] args)
@@ -15,10 +23,13 @@ namespace MyBus.App
             //https://csharp.hotexamples.com/pt/examples/Ninject/StandardKernel/Dispose/php-standardkernel-dispose-method-examples.html
             var kernel = new StandardKernel();
             kernel.Bind<IClassWithDisposable>().To<ClassWithDisposable>();
-            kernel.Bind<Produtos>().ToMethod(ctx => new Produtos());
+            //kernel.Bind<Produtos>().ToMethod(ctx => new Produtos());
+            kernel.Bind<Produtos>().To<Produtos>();
+            //kernel.Add<Produtos>();
+
             var test = kernel.Get<IClassWithDisposable>();
             var produtos = kernel.Get<Produtos>();
-
+            
             using (IActivationBlock v = kernel.BeginBlock())
             {
                 var produtos2 = v.Get<Produtos>();
