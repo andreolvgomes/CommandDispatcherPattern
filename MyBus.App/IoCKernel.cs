@@ -39,12 +39,7 @@ namespace MyBus.App
             _kernel.Bind<IDispatcher, Dispatcher>();
             _kernel.Bind<IServiceContainer, ServiceInstanceContainer>();
 
-            //_container.Bind<IClassWithDisposable, ClassWithDisposable>();
-
-            //_container.Bind(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
-            //_container.Bind(typeof(ICommandHandler<,>), new[] { typeof(ICommandHandler<,>).Assembly });
-
-            _kernel.Bind(typeof(ICommandHandler<CreateNewCommand, bool>), typeof(CommandsHandlers));
+            _kernel.Bind<typeof(ICommandHandler<CreateNewCommand, bool>>().to, typeof(CommandsHandlers));
             _kernel.Bind(typeof(IEventHandler<CreateNewEvent>), typeof(EventsHandlers));
             _kernel.Bind(typeof(IQueryHandler<GetProductQuery, string>), typeof(QueriesHandlers));
 
