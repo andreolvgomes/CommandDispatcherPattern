@@ -22,62 +22,12 @@ namespace MyBus.App
             kernel.Bind<IConnection>().To<Connection>();
             kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto("IConnectionRemoto"));
 
-            //var handlerType = typeof(IExecuteHandler<>).MakeGenericType(new SalvarExecute().GetType());
-            //Get(handlerType);
             IConnectionRemoto cnnrem = new ConnectionRemoto("ConnectionRemoto");
             IConnectionLocal cnnloc = new ConnectionLocal("ConnectionLocal");
             IUnitOfWork uow = kernel.Get<IUnitOfWork>();
 
-            Execute(new SalvarExecute(), uow, cnnloc);
-            Execute(new EditarExecute(), uow);
-        }
-
-        public static object Get(Type component)
-        {
-            var implementations = kernel.Get(component);
-            return ResolveInstance(component, implementations.GetType());
-        }
-
-        private static object ResolveInstance(Type component, Type implementation)
-        {
-            return CreateNewInstance(component, implementation);
-        }
-
-        private static object CreateNewInstance(Type component, Type implementation)
-        {
-            var constructor = SelectConstructor(implementation);
-            if (constructor == null)
-            {
-                throw new Exception("constructor is null");
-            }
-
-            var arguments = GetConstructorArguments(constructor.GetParameters());
-
-            try
-            {
-                var instance = constructor.Invoke(arguments);// as INinjectComponent;
-                return instance;
-            }
-            catch (TargetInvocationException ex)
-            {
-                return null;
-            }
-        }
-
-        private static object[] GetConstructorArguments(ParameterInfo[] parameters)
-        {
-            if (parameters.Length == 0)
-            {
-                return Array.Empty<object>();
-            }
-
-            var arguments = new object[parameters.Length];
-            for (var i = 0; i < parameters.Length; i++)
-            {
-                arguments[i] = Get(parameters[i].ParameterType);
-            }
-
-            return arguments;
+            Execute(new SalvarExecute());
+            Execute(new EditarExecute());
         }
 
         private static ConstructorInfo SelectConstructor(Type implementation)
@@ -85,40 +35,45 @@ namespace MyBus.App
             return implementation.GetConstructors().OrderByDescending(c => c.GetParameters().Length).FirstOrDefault();
         }
 
-        //public static void Execute(IExecute execute, IUnitOfWork uow = null)
-        public static void Execute(IExecute execute, params object[] constructors)
+        public static void Execute(IExecute execute, params object[] param_constructors)
         {
-            var handlerType = typeof(IExecuteHandler<>).MakeGenericType(execute.GetType());
-            //dynamic handler = kernel.Get(handlerType);
+            var component = typeof(IExecuteHandler<>).MakeGenericType(execute.GetType());
+            List<ConstructorArgument> arguments = ArgumentsConstructor(param_constructors, component);
+            dynamic implementation = kernel.Get(component, arguments.ToArray());
 
-            var implementations = kernel.Get(handlerType);
-            var constructor = SelectConstructor(implementations.GetType());
+            implementation.Handle((dynamic)execute, null);
+        }
+
+        private static List<ConstructorArgument> ArgumentsConstructor(object[] param_constructors, Type component)
+        {
+            var implementation = kernel.Get(component);
+            var constructor = SelectConstructor(implementation.GetType());
 
             ParameterInfo[] parameters = constructor.GetParameters();
             List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-            List<ConstructorArgument> does_not_exists_arguments = new List<ConstructorArgument>();
-            for (int i = 0; i < parameters.Length; i++)
+            List<object> implementations = new List<object>();
+
+            foreach (ParameterInfo parameter in parameters)
             {
-                ParameterInfo parameterInfo = parameters[i];
-                var implemt = kernel.Get(parameterInfo.ParameterType);
-                var param_constructor = constructors.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
+                var implemt = kernel.Get(parameter.ParameterType);
+                implementations.Add(implemt);
+
+                var param_constructor = param_constructors.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
                 if (param_constructor == null)
-                    throw new Exception($"{parameterInfo.ParameterType} doesn't exists in constructor");
+                    continue;
 
                 if (implemt.GetType().Equals(param_constructor.GetType()))
-                {
-                    arguments.Add(new ConstructorArgument(parameterInfo.Name, param_constructor));
-                }
+                    arguments.Add(new ConstructorArgument(parameter.Name, param_constructor));
             }
 
-            ConstructorArgument[] myIntArray = new ConstructorArgument[arguments.Count];
-            for (int i = 0; i < arguments.Count; i++)
-                myIntArray[i] = arguments[i];
+            // valid
+            foreach (var item in param_constructors)
+            {
+                if (implementations.FirstOrDefault(c => c.GetType().Equals(item.GetType())) == null)
+                    throw new Exception($"{implementation.GetType()} doesn't exists '{item.GetType()}' in constructor");
+            }
 
-            dynamic handler2 = kernel.Get(handlerType, myIntArray);
-
-            //handler.Handle((dynamic)execute, uow);
-            handler2.Handle((dynamic)execute, null);
+            return arguments;
         }
     }
 
