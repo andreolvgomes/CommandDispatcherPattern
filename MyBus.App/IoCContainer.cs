@@ -38,7 +38,7 @@ namespace MyBus.App
 
             _container.Register<IMessager, Messager>();
             _container.Register<IDispatcher, Dispatcher>();
-            _container.Register<IServiceInstance, ServiceInstanceContainer>();
+            _container.Register<IServiceContainer, ServiceInstanceContainer>();
 
             //_container.Register<ClassWithDisposable>();
             _container.RegisterDisposableTransient<Produtos>();

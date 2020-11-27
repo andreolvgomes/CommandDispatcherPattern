@@ -6,6 +6,6 @@ namespace MessagerBus.DispatcherPattern.Interfaces
 {
     public interface IQuerier
     {
-        TResult Query<TResult>(IQuery<TResult> _query);
+        TResult Query<TResult>(IQuery<TResult> _query, params object[] param_constructor);
     }
 }

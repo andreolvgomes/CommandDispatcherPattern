@@ -9,7 +9,7 @@ using Ninject.Parameters;
 
 namespace MyBus.App
 {
-    public class UnitOfWorkConnection
+    public class Kernel_ArgumentsConstructor
     {
         public static IKernel kernel;
 
@@ -20,31 +20,29 @@ namespace MyBus.App
             kernel.Bind<IExecuteHandler<EditarExecute>>().To<SalvarHandler>();
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             kernel.Bind<IConnection>().To<Connection>();
-            kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto("IConnectionRemoto"));
+            kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto(Guid.NewGuid().ToString()));
 
-            IConnectionRemoto cnnrem = new ConnectionRemoto("ConnectionRemoto");
-            IConnectionLocal cnnloc = new ConnectionLocal("ConnectionLocal");
+            IConnectionRemoto cnnrem = new ConnectionRemoto(Guid.NewGuid().ToString());
+            IConnectionLocal cnnloc = new ConnectionLocal(Guid.NewGuid().ToString());
             IUnitOfWork uow = kernel.Get<IUnitOfWork>();
 
-            Execute(new SalvarExecute());
-            Execute(new EditarExecute());
-        }
-
-        private static ConstructorInfo SelectConstructor(Type implementation)
-        {
-            return implementation.GetConstructors().OrderByDescending(c => c.GetParameters().Length).FirstOrDefault();
+            Execute(new SalvarExecute(), cnnrem);
+            Execute(new EditarExecute(), cnnrem);
         }
 
         public static void Execute(IExecute execute, params object[] param_constructors)
         {
             var component = typeof(IExecuteHandler<>).MakeGenericType(execute.GetType());
-            List<ConstructorArgument> arguments = ArgumentsConstructor(param_constructors, component);
-            dynamic implementation = kernel.Get(component, arguments.ToArray());
 
+            List<ConstructorArgument> arguments = new List<ConstructorArgument>();
+            if (param_constructors.Length > 0)
+                arguments = Arguments(param_constructors, component);
+
+            dynamic implementation = kernel.Get(component, arguments.ToArray());
             implementation.Handle((dynamic)execute, null);
         }
 
-        private static List<ConstructorArgument> ArgumentsConstructor(object[] param_constructors, Type component)
+        private static List<ConstructorArgument> Arguments(object[] param_constructors, Type component)
         {
             var implementation = kernel.Get(component);
             var constructor = SelectConstructor(implementation.GetType());
@@ -69,11 +67,17 @@ namespace MyBus.App
             // valid
             foreach (var item in param_constructors)
             {
+                // lança exceção caso o obj passado para o construtor não exista como argumento na implementação
                 if (implementations.FirstOrDefault(c => c.GetType().Equals(item.GetType())) == null)
                     throw new Exception($"{implementation.GetType()} doesn't exists '{item.GetType()}' in constructor");
             }
 
             return arguments;
+        }
+
+        private static ConstructorInfo SelectConstructor(Type implementation)
+        {
+            return implementation.GetConstructors().OrderByDescending(c => c.GetParameters().Length).FirstOrDefault();
         }
     }
 

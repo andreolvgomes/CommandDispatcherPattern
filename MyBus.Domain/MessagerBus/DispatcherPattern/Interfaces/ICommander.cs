@@ -6,7 +6,7 @@ namespace MessagerBus.DispatcherPattern.Interfaces
 {
     public interface ICommander
     {
-        TResult Command<TResult>(ICommand<TResult> command);
-        void Command(IFunction command);
+        TResult Command<TResult>(ICommand<TResult> command, params object[] param_constructor);
+        void Command(ICommand command, params object[] param_constructor);
     }
 }
