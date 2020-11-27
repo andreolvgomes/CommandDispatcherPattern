@@ -57,4 +57,10 @@ C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.genruntimeconfig.c
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\Ninject.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\projects\MyBus\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\projects\MyBus\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CoreCompileInputs.cache

@@ -13,7 +13,7 @@ namespace MyBus.App
             //https://csharp.hotexamples.com/pt/examples/Ninject/StandardKernel/Dispose/php-standardkernel-dispose-method-examples.html
             var kernel = new StandardKernel();
 
-            kernel.Bind<IConnection>().To<Connection>().InTransientScope();
+            kernel.Bind<IConnection>().To<Connection>();
             kernel.Bind<ControllerClientes>().To<ControllerClientes>();
             kernel.Bind<ControllerProdutos>().To<ControllerProdutos>();
 

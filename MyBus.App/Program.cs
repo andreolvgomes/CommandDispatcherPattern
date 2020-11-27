@@ -20,6 +20,7 @@ namespace MyBus.App
     {
         public static void Main(string[] args)
         {
+            UnitOfWorkConnection.Teste();
             Kernel_Scolpe.Test();
             Kernel_TwoConnection.Test();
 
