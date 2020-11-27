@@ -20,20 +20,8 @@ namespace MyBus.App
     {
         public static void Main(string[] args)
         {
-            //https://csharp.hotexamples.com/pt/examples/Ninject/StandardKernel/Dispose/php-standardkernel-dispose-method-examples.html
-            var kernel = new StandardKernel();
-            kernel.Bind<IClassWithDisposable>().To<ClassWithDisposable>();
-            //kernel.Bind<Produtos>().ToMethod(ctx => new Produtos());
-            kernel.Bind<Produtos>().To<Produtos>();
-            //kernel.Add<Produtos>();
-
-            var test = kernel.Get<IClassWithDisposable>();
-            var produtos = kernel.Get<Produtos>();
-            
-            using (IActivationBlock v = kernel.BeginBlock())
-            {
-                var produtos2 = v.Get<Produtos>();
-            }
+            Kernel_Scolpe.Test();
+            Kernel_TwoConnection.Test();
 
             IoCServiceCollection.Ins.Init();
             IoCContainer.Ins.Init();
