@@ -40,13 +40,7 @@ namespace MyBus.App
 
         private List<ConstructorArgument> Arguments(object[] param_constructors, Type component)
         {
-            object implementation;
-            if (!instances.TryGetValue(component, out implementation))
-            {
-                implementation = _kernel.Get(component);
-                instances.Add(component, implementation);
-            }
-            
+            object implementation = GetImplementation(component);
             var constructor = SelectConstructor(implementation.GetType());
 
             ParameterInfo[] parameters = constructor.GetParameters();
@@ -75,6 +69,17 @@ namespace MyBus.App
             }
 
             return arguments;
+        }
+
+        private object GetImplementation(Type component)
+        {
+            object implementation;
+            if (!instances.TryGetValue(component, out implementation))
+            {
+                implementation = _kernel.Get(component);
+                instances.Add(component, implementation);
+            }
+            return implementation;
         }
 
         private ConstructorInfo SelectConstructor(Type implementation)
