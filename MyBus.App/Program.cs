@@ -24,6 +24,7 @@ namespace MyBus.App
             Kernel_Scolpe.Test();
             Kernel_TwoConnection.Test();
 
+            IoCKernel.Ins.Init();
             IoCServiceCollection.Ins.Init();
             IoCContainer.Ins.Init();
 

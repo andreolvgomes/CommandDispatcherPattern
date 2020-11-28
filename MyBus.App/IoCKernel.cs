@@ -36,15 +36,23 @@ namespace MyBus.App
         public void Init()
         {
             _kernel.Bind<IMessager>().To<Messager>();
-            _kernel.Bind<IDispatcher, Dispatcher>();
-            _kernel.Bind<IServiceContainer, ServiceInstanceContainer>();
+            _kernel.Bind<IDispatcher>().To<Dispatcher>();
+            _kernel.Bind<IServiceContainer>().To<ServiceInstanceKernel>();
 
-            _kernel.Bind<typeof(ICommandHandler<CreateNewCommand, bool>>().to, typeof(CommandsHandlers));
-            _kernel.Bind(typeof(IEventHandler<CreateNewEvent>), typeof(EventsHandlers));
-            _kernel.Bind(typeof(IQueryHandler<GetProductQuery, string>), typeof(QueriesHandlers));
+            _kernel.Bind<IConnectionLocal>().ToMethod(ctx => new ConnectionLocal("ConnectionLocal: " + Guid.NewGuid().ToString()));
+            _kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto("ConnectionRemoto: " + Guid.NewGuid().ToString()));
 
-            var test1 = _kernel.Get<IClassWithDisposable>();
-            var test2 = _kernel.Get<Produtos>();
+            _kernel.Bind(typeof(ICommandHandler<CreateNewProduct>)).To(typeof(CreateHandler));
+            _kernel.Bind(typeof(ICommandHandler<EditNewProduct>)).To(typeof(EditHandler));
+
+            IDispatcher dispatcher = _kernel.Get<IDispatcher>();
+
+            IConnectionRemoto cnn = _kernel.Get<IConnectionRemoto>();
+            IConnectionLocal cnnlocal = _kernel.Get<IConnectionLocal>();
+
+            dispatcher.Command(new CreateNewProduct(), cnn, cnnlocal);
+            dispatcher.Command(new CreateNewProduct(), cnn, cnnlocal);
+            dispatcher.Command(new EditNewProduct(), cnn, cnnlocal);
         }
 
         public T Get<T>() where T : class
@@ -52,4 +60,36 @@ namespace MyBus.App
             return _kernel.Get<T>();
         }
     }
+
+    #region classes de testes
+
+    // commands
+    public class CreateNewProduct : ICommand { }
+    public class EditNewProduct : ICommand { }
+
+    public class CreateHandler : ICommandHandler<CreateNewProduct>
+    {
+        public CreateHandler(IConnectionRemoto cnnremo, IConnectionLocal cnnlocal)
+        {
+        }
+
+        public Result Handle(CreateNewProduct command)
+        {
+            return Result.Default;
+        }
+    }
+
+    public class EditHandler : ICommandHandler<EditNewProduct>
+    {
+        public EditHandler(IConnectionRemoto cnnremo)
+        {
+        }
+
+        public Result Handle(EditNewProduct command)
+        {
+            return Result.Default;
+        }
+    }
+
+    #endregion
 }

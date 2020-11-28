@@ -34,3 +34,15 @@ C:\projects\MyBus\My.Tests\bin\Debug\netcoreapp3.1\My.Tests.pdb
 C:\projects\MyBus\My.Tests\bin\Debug\netcoreapp3.1\MyBus.Domain.dll
 C:\projects\MyBus\My.Tests\bin\Debug\netcoreapp3.1\MyBus.Domain.pdb
 C:\projects\MyBus\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.csproj.CopyComplete
+C:\CommandDispatcherPattern\My.Tests\bin\Debug\netcoreapp3.1\My.Tests.deps.json
+C:\CommandDispatcherPattern\My.Tests\bin\Debug\netcoreapp3.1\My.Tests.dll
+C:\CommandDispatcherPattern\My.Tests\bin\Debug\netcoreapp3.1\My.Tests.pdb
+C:\CommandDispatcherPattern\My.Tests\bin\Debug\netcoreapp3.1\MyBus.Domain.dll
+C:\CommandDispatcherPattern\My.Tests\bin\Debug\netcoreapp3.1\MyBus.Domain.pdb
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.csprojAssemblyReference.cache
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.csproj.CoreCompileInputs.cache
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.AssemblyInfoInputs.cache
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.AssemblyInfo.cs
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.csproj.CopyComplete
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.dll
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\netcoreapp3.1\My.Tests.pdb

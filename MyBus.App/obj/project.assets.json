@@ -1345,23 +1345,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\": {},
+    "C:\\Users\\André\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\MyBus\\MyBus.App\\MyBus.App.csproj",
+      "projectUniqueName": "C:\\CommandDispatcherPattern\\MyBus.App\\MyBus.App.csproj",
       "projectName": "MyBus.App",
-      "projectPath": "C:\\projects\\MyBus\\MyBus.App\\MyBus.App.csproj",
-      "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\MyBus\\MyBus.App\\obj\\",
+      "projectPath": "C:\\CommandDispatcherPattern\\MyBus.App\\MyBus.App.csproj",
+      "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+      "outputPath": "C:\\CommandDispatcherPattern\\MyBus.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1374,11 +1374,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj": {
-              "projectPath": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj"
+            "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj": {
+              "projectPath": "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj"
             },
-            "C:\\projects\\MyBus\\MyBus.Domain\\MyBus.Domain.csproj": {
-              "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\MyBus.Domain.csproj"
+            "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
+              "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj"
             }
           }
         }
@@ -1424,7 +1424,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

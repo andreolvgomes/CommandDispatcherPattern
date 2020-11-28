@@ -25,3 +25,12 @@ C:\projects\MyBus\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.AssemblyInfo
 C:\projects\MyBus\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.csproj.CoreCompileInputs.cache
 C:\projects\MyBus\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.dll
 C:\projects\MyBus\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.pdb
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\MyBus.Domain.deps.json
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\MyBus.Domain.dll
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\MyBus.Domain.pdb
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.csprojAssemblyReference.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.csproj.CoreCompileInputs.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.AssemblyInfoInputs.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.AssemblyInfo.cs
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.dll
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\MyBus.Domain.pdb
