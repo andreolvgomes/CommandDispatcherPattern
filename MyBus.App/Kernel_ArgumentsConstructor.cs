@@ -56,12 +56,12 @@ namespace MyBus.App
                 var implemt = kernel.Get(parameter.ParameterType);
                 implementations.Add(implemt);
 
-                var param_constructor = param_constructors.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
-                if (param_constructor == null)
+                var params_constructor = param_constructors.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
+                if (params_constructor == null)
                     continue;
 
-                if (implemt.GetType().Equals(param_constructor.GetType()))
-                    arguments.Add(new ConstructorArgument(parameter.Name, param_constructor));
+                if (implemt.GetType().Equals(params_constructor.GetType()))
+                    arguments.Add(new ConstructorArgument(parameter.Name, params_constructor));
             }
 
             // valid

@@ -43,10 +43,10 @@
         /// <typeparam name="TResult"></typeparam>
         /// <param name="command"></param>
         /// <returns></returns>
-        public TResult Command<TResult>(ICommand<TResult> command, params object[] param_constructor)
+        public TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor)
         {
             var handlerType = (typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult)));
-            dynamic handler = _serviceContainer.GetInstance(handlerType, param_constructor);
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             return handler.Handle((dynamic)command);
         }
 
@@ -54,10 +54,10 @@
         /// Execute message command
         /// </summary>
         /// <param name="command"></param>
-        public void Command(ICommand command, params object[] param_constructor)
+        public void Command(ICommand command, params object[] params_constructor)
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
-            dynamic handler = _serviceContainer.GetInstance(handlerType, param_constructor);
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             handler.Handle((dynamic)command);
         }
 
@@ -67,10 +67,10 @@
         /// <typeparam name="TResult"></typeparam>
         /// <param name="_query"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> _query, params object[] param_constructor)
+        public TResult Query<TResult>(IQuery<TResult> _query, params object[] params_constructor)
         {
             var handlerType = (typeof(IQueryHandler<,>).MakeGenericType(_query.GetType(), typeof(TResult)));
-            dynamic handler = _serviceContainer.GetInstance(handlerType, param_constructor);
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             return handler.Handle((dynamic)_query);
         }
 
@@ -80,10 +80,10 @@
         /// <typeparam name="TResult"></typeparam>
         /// <param name="function"></param>
         /// <returns></returns>
-        public TResult Function<TResult>(IFunction<TResult> function, params object[] param_constructor)
+        public TResult Function<TResult>(IFunction<TResult> function, params object[] params_constructor)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType(), typeof(TResult)));
-            dynamic handler = _serviceContainer.GetInstance(handlerType, param_constructor);
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             return handler.Handle((dynamic)function);
         }
 
@@ -91,10 +91,10 @@
         /// Execute message function
         /// </summary>
         /// <param name="function"></param>
-        public void Function(IFunction function, params object[] param_constructor)
+        public void Function(IFunction function, params object[] params_constructor)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));
-            dynamic handler = _serviceContainer.GetInstance(handlerType, param_constructor);
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             handler.Handle(function);
         }
     }

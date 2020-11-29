@@ -9,13 +9,13 @@ using Ninject.Parameters;
 
 namespace MyBus.App
 {
-    public class ServiceInstanceKernel : IServiceContainer
+    public class IServiceContainerKernel : IServiceContainer
     {
         private readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
 
         private readonly IKernel _kernel;
 
-        public ServiceInstanceKernel(IKernel kernel)
+        public IServiceContainerKernel(IKernel kernel)
         {
             _kernel = kernel;
         }
@@ -29,11 +29,11 @@ namespace MyBus.App
             return _kernel.Get(serviceType, arguments.ToArray());
         }
 
-        //public TService GetInstance<TService>(params object[] param_constructor) where TService : class
+        //public TService GetInstance<TService>(params object[] params_constructor) where TService : class
         //{
         //    List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-        //    if (param_constructor.Length > 0)
-        //        arguments = Arguments(param_constructor, serviceType);
+        //    if (params_constructor.Length > 0)
+        //        arguments = Arguments(params_constructor, serviceType);
 
         //    return _kernel.GetInstance<TService>();
         //}
@@ -52,16 +52,13 @@ namespace MyBus.App
                 var implemt = _kernel.Get(parameter.ParameterType);
                 implementations_constr.Add(implemt);
 
-                var param_constructor = params_constructor.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
-                if (param_constructor == null)
-                    continue;
-
-                if (implemt.GetType().Equals(param_constructor.GetType()))
-                    arguments.Add(new ConstructorArgument(parameter.Name, param_constructor));
+                var param_constr = params_constructor.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
+                if (param_constr != null)
+                    arguments.Add(new ConstructorArgument(parameter.Name, param_constr));
             }
 
             // valid
-            CheckImplementationsThrow(implementations_constr, implementation, params_constructor);            
+            CheckImplementationsThrow(implementations_constr, implementation, params_constructor);
 
             return arguments;
         }

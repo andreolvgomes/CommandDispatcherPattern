@@ -16,12 +16,12 @@ namespace MyBus.App
             _serviceProvider = serviceProvider;
         }
 
-        public object GetInstance(Type serviceType, params object[] param_constructor)
+        public object GetInstance(Type serviceType, params object[] params_constructor)
         {
             return _serviceProvider.GetService(serviceType);
         }
 
-        public TService GetInstance<TService>(params object[] param_constructor) where TService : class
+        public TService GetInstance<TService>(params object[] params_constructor) where TService : class
         {
             return _serviceProvider.GetService<TService>();
         }

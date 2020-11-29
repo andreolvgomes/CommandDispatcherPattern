@@ -39,11 +39,12 @@ namespace MyBus.App
 
         public void Init()
         {
+            // requared
             _kernel.Bind<IDispatcherInvoke>().To<DispatcherInvoke>();
             _kernel.Bind<IDispatcher>().To<Dispatcher>();
-            _kernel.Bind<IServiceContainer>().To<ServiceInstanceKernel>();
+            _kernel.Bind<IServiceContainer>().To<IServiceContainerKernel>();
 
-            //_kernel.Bind<IConnectionLocal>().ToMethod(ctx => new ConnectionLocal("ConnectionLocal: " + Guid.NewGuid().ToString()));
+            _kernel.Bind<IConnectionLocal>().ToMethod(ctx => new ConnectionLocal("ConnectionLocal: " + Guid.NewGuid().ToString()));
             _kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto("ConnectionRemoto: " + Guid.NewGuid().ToString()));
 
             _kernel.Bind(typeof(ICommandHandler<CreateNewProduct>)).To(typeof(CreateHandler));
