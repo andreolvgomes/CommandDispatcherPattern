@@ -1,6 +1,6 @@
 ﻿using System;
-using MessagerBus;
-using MessagerBus.DispatcherPattern;
+using CommandDispatcher;
+using CommandDispatcher.DispatcherPattern;
 using My.Tests.Events;
 using My.Tests.Queries;
 using MyBus.Tests.Commands;
@@ -36,7 +36,7 @@ namespace MyBus.App
         {
             _container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
 
-            _container.Register<IMessager, Messager>();
+            _container.Register<IDispatcherInvoke, DispatcherInvoke>();
             _container.Register<IDispatcher, Dispatcher>();
             _container.Register<IServiceContainer, ServiceInstanceContainer>();
 

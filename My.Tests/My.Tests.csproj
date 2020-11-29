@@ -5,7 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MyBus.Domain\MyBus.Domain.csproj" />
+    <PackageReference Include="SimpleInjector" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBus.Domain\CommandDispatcher.csproj" />
   </ItemGroup>
 
 </Project>

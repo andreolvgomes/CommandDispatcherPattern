@@ -8,9 +8,9 @@
     ".NETCoreApp,Version=v3.1": {
       "MyBus.App/1.0.0": {
         "dependencies": {
+          "CommandDispatcher": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.0",
           "My.Tests": "1.0.0",
-          "MyBus.Domain": "1.0.0",
           "Ninject": "3.3.4",
           "SimpleInjector": "5.1.0",
           "System.Data.SqlClient": "4.8.2"
@@ -202,20 +202,18 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "My.Tests/1.0.0": {
-        "dependencies": {
-          "MyBus.Domain": "1.0.0"
-        },
+      "CommandDispatcher/1.0.0": {
         "runtime": {
-          "My.Tests.dll": {}
+          "CommandDispatcher.dll": {}
         }
       },
-      "MyBus.Domain/1.0.0": {
+      "My.Tests/1.0.0": {
         "dependencies": {
+          "CommandDispatcher": "1.0.0",
           "SimpleInjector": "5.1.0"
         },
         "runtime": {
-          "MyBus.Domain.dll": {}
+          "My.Tests.dll": {}
         }
       }
     }
@@ -387,12 +385,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "My.Tests/1.0.0": {
+    "CommandDispatcher/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "MyBus.Domain/1.0.0": {
+    "My.Tests/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

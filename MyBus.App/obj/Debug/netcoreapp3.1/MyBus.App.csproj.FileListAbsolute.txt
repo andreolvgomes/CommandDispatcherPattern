@@ -81,8 +81,6 @@ C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win-x86\n
 C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\My.Tests.dll
-C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\MyBus.Domain.dll
-C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\MyBus.Domain.pdb
 C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\My.Tests.pdb
 C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csprojAssemblyReference.cache
 C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.CoreCompileInputs.cache
@@ -92,3 +90,5 @@ C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.csproj.C
 C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.dll
 C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.pdb
 C:\CommandDispatcherPattern\MyBus.App\obj\Debug\netcoreapp3.1\MyBus.App.genruntimeconfig.cache
+C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\CommandDispatcher.dll
+C:\CommandDispatcherPattern\MyBus.App\bin\Debug\netcoreapp3.1\CommandDispatcher.pdb

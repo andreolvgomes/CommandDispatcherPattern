@@ -1,5 +1,5 @@
-﻿using MessagerBus;
-using MessagerBus.DispatcherPattern;
+﻿using CommandDispatcher;
+using CommandDispatcher.DispatcherPattern;
 using Microsoft.Extensions.DependencyInjection;
 using My.Tests.Events;
 using My.Tests.Queries;
@@ -32,7 +32,7 @@ namespace MyBus.App
         public void Init()
         {
             ServiceCollection service = new ServiceCollection();
-            service.AddScoped<IMessager, Messager>();
+            service.AddScoped<IDispatcherInvoke, DispatcherInvoke>();
             service.AddScoped<IDispatcher, Dispatcher>();
             service.AddScoped<IServiceContainer, ServiceInstanceContainer>();
             service.AddScoped<ClassWithDisposable>();

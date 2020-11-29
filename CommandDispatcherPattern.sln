@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyBus.Domain", "MyBus.Domain\MyBus.Domain.csproj", "{AEE9B589-E512-41A0-ADAA-B52436994EA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandDispatcher", "MyBus.Domain\CommandDispatcher.csproj", "{AEE9B589-E512-41A0-ADAA-B52436994EA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My.Tests", "My.Tests\My.Tests.csproj", "{F00C0681-A981-42D2-A1C4-A086C79FF3E6}"
 EndProject

@@ -1,6 +1,6 @@
 ﻿using System;
-using MessagerBus;
-using MessagerBus.DispatcherPattern;
+using CommandDispatcher;
+using CommandDispatcher.DispatcherPattern;
 using My.Tests.Events;
 using My.Tests.Queries;
 using MyBus.Tests.Commands;
@@ -35,7 +35,7 @@ namespace MyBus.App
 
         public void Init()
         {
-            _kernel.Bind<IMessager>().To<Messager>();
+            _kernel.Bind<IDispatcherInvoke>().To<DispatcherInvoke>();
             _kernel.Bind<IDispatcher>().To<Dispatcher>();
             _kernel.Bind<IServiceContainer>().To<ServiceInstanceKernel>();
 

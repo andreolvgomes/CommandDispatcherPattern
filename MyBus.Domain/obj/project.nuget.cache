@@ -1,14 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ux1agYSB6bwBwU8wWLFOQjemvGl6Q8veHzfLLr4apV3nNctYNuCnP78P28ORcla8vaincNlIWzB68otci7wNCA==",
+  "dgSpecHash": "70EUNYICjODXLctdaZuA3gY2iPmLczHJ++Gly296Ea/fL1zooqPuJ5CsMZnyZgamC+neFR79ag6F2uYA9KKP/w==",
   "success": true,
-  "projectFilePath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\André\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\simpleinjector\\5.1.0\\simpleinjector.5.1.0.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\system.runtime\\4.1.0\\system.runtime.4.1.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

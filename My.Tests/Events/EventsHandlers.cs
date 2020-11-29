@@ -1,5 +1,5 @@
 ﻿using My.Tests.Events;
-using MessagerBus;
+using CommandDispatcher;
 using System;
 
 namespace MyBus.Tests.Events

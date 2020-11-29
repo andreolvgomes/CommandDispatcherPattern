@@ -1,4 +1,4 @@
-﻿using MessagerBus;
+﻿using CommandDispatcher;
 
 namespace MyBus.Tests.Commands
 {

@@ -296,30 +296,28 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "CommandDispatcher/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CommandDispatcher.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommandDispatcher.dll": {}
+        }
+      },
       "My.Tests/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "MyBus.Domain": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/My.Tests.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/My.Tests.dll": {}
-        }
-      },
-      "MyBus.Domain/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
+          "CommandDispatcher": "1.0.0",
           "SimpleInjector": "5.1.0"
         },
         "compile": {
-          "bin/placeholder/MyBus.Domain.dll": {}
+          "bin/placeholder/My.Tests.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MyBus.Domain.dll": {}
+          "bin/placeholder/My.Tests.dll": {}
         }
       }
     }
@@ -1323,22 +1321,22 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "CommandDispatcher/1.0.0": {
+      "type": "project",
+      "path": "../MyBus.Domain/CommandDispatcher.csproj",
+      "msbuildProject": "../MyBus.Domain/CommandDispatcher.csproj"
+    },
     "My.Tests/1.0.0": {
       "type": "project",
       "path": "../My.Tests/My.Tests.csproj",
       "msbuildProject": "../My.Tests/My.Tests.csproj"
-    },
-    "MyBus.Domain/1.0.0": {
-      "type": "project",
-      "path": "../MyBus.Domain/MyBus.Domain.csproj",
-      "msbuildProject": "../MyBus.Domain/MyBus.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CommandDispatcher >= 1.0.0",
       "Microsoft.Extensions.DependencyInjection >= 5.0.0",
       "My.Tests >= 1.0.0",
-      "MyBus.Domain >= 1.0.0",
       "Ninject >= 3.3.4",
       "SimpleInjector >= 5.1.0",
       "System.Data.SqlClient >= 4.8.2"
@@ -1377,8 +1375,8 @@
             "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj": {
               "projectPath": "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj"
             },
-            "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
-              "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj"
+            "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+              "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
             }
           }
         }

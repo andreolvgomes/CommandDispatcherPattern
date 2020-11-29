@@ -30,8 +30,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
-                "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj"
+              "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+                "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
               }
             }
           }
@@ -44,6 +44,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "SimpleInjector": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -92,8 +98,8 @@
               "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj": {
                 "projectPath": "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj"
               },
-              "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
-                "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj"
+              "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+                "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
               }
             }
           }
@@ -143,12 +149,12 @@
         }
       }
     },
-    "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
+    "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj",
-        "projectName": "MyBus.Domain",
-        "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj",
+        "projectUniqueName": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+        "projectName": "CommandDispatcher",
+        "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
         "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
         "outputPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -179,12 +185,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "SimpleInjector": {
-              "target": "Package",
-              "version": "[5.1.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

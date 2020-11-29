@@ -1,0 +1,9 @@
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\CommandDispatcher.deps.json
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\CommandDispatcher.dll
+C:\CommandDispatcherPattern\MyBus.Domain\bin\Debug\netcoreapp3.1\CommandDispatcher.pdb
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.csprojAssemblyReference.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.csproj.CoreCompileInputs.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.AssemblyInfoInputs.cache
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.AssemblyInfo.cs
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.dll
+C:\CommandDispatcherPattern\MyBus.Domain\obj\Debug\netcoreapp3.1\CommandDispatcher.pdb

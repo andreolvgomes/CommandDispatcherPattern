@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using MessagerBus;
+using CommandDispatcher;
 using Ninject;
 using Ninject.Parameters;
 

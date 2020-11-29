@@ -54,17 +54,14 @@
           "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
-      "MyBus.Domain/1.0.0": {
+      "CommandDispatcher/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "SimpleInjector": "5.1.0"
-        },
         "compile": {
-          "bin/placeholder/MyBus.Domain.dll": {}
+          "bin/placeholder/CommandDispatcher.dll": {}
         },
         "runtime": {
-          "bin/placeholder/MyBus.Domain.dll": {}
+          "bin/placeholder/CommandDispatcher.dll": {}
         }
       }
     }
@@ -91,6 +88,7 @@
       "path": "microsoft.netcore.targets/1.0.1",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -129,7 +127,6 @@
       "path": "system.componentmodel/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -188,6 +185,7 @@
       "path": "system.runtime/4.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -273,15 +271,16 @@
         "system.runtime.nuspec"
       ]
     },
-    "MyBus.Domain/1.0.0": {
+    "CommandDispatcher/1.0.0": {
       "type": "project",
-      "path": "../MyBus.Domain/MyBus.Domain.csproj",
-      "msbuildProject": "../MyBus.Domain/MyBus.Domain.csproj"
+      "path": "../MyBus.Domain/CommandDispatcher.csproj",
+      "msbuildProject": "../MyBus.Domain/CommandDispatcher.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "MyBus.Domain >= 1.0.0"
+      "CommandDispatcher >= 1.0.0",
+      "SimpleInjector >= 5.1.0"
     ]
   },
   "packageFolders": {
@@ -314,8 +313,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj": {
-              "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\MyBus.Domain.csproj"
+            "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+              "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
             }
           }
         }
@@ -328,6 +327,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "SimpleInjector": {
+            "target": "Package",
+            "version": "[5.1.0, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

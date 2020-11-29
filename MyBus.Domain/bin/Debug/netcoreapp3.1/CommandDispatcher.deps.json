@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "CommandDispatcher/1.0.0": {
+        "runtime": {
+          "CommandDispatcher.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommandDispatcher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using MessagerBus;
+using CommandDispatcher;
 
 namespace My.Tests.Events
 {
