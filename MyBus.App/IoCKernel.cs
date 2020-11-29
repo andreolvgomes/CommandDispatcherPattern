@@ -1,6 +1,6 @@
 ﻿using System;
 using CommandDispatcher;
-using CommandDispatcher.DispatcherPattern;
+using CommandDispatcher.Pattern;
 using My.Tests.Events;
 using My.Tests.Queries;
 using MyBus.Tests.Commands;

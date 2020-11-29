@@ -1,5 +1,5 @@
 ﻿using System;
-using CommandDispatcher.DispatcherPattern;
+using CommandDispatcher.Pattern;
 
 namespace CommandDispatcher
 {

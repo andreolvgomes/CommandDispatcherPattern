@@ -1,5 +1,5 @@
 ﻿using CommandDispatcher;
-using CommandDispatcher.DispatcherPattern;
+using CommandDispatcher.Pattern;
 using Microsoft.Extensions.DependencyInjection;
 using My.Tests.Events;
 using My.Tests.Queries;

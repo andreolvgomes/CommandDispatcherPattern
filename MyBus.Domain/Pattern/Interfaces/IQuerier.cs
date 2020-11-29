@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CommandDispatcher.DispatcherPattern.Interfaces
+namespace CommandDispatcher.Pattern.Interfaces
 {
     public interface IQuerier
     {

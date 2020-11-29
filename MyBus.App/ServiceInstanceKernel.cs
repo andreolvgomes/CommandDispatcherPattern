@@ -20,13 +20,13 @@ namespace MyBus.App
             _kernel = kernel;
         }
 
-        public object GetInstance(Type serviceType, params object[] param_constructor)
+        public object GetInstance(Type serviceType, params object[] params_constructor)
         {
             List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-            if (param_constructor.Length > 0)
-                arguments = Arguments(param_constructor, serviceType);
+            if (params_constructor.Length > 0)
+                arguments = Arguments(serviceType, params_constructor);
+
             return _kernel.Get(serviceType, arguments.ToArray());
-            //return _kernel.Get(serviceType);
         }
 
         //public TService GetInstance<TService>(params object[] param_constructor) where TService : class
@@ -38,21 +38,21 @@ namespace MyBus.App
         //    return _kernel.GetInstance<TService>();
         //}
 
-        private List<ConstructorArgument> Arguments(object[] param_constructors, Type component)
+        private List<ConstructorArgument> Arguments(Type component, object[] params_constructor)
         {
             object implementation = GetImplementation(component);
             var constructor = SelectConstructor(implementation.GetType());
 
             ParameterInfo[] parameters = constructor.GetParameters();
             List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-            List<object> implementations = new List<object>();
+            List<object> implementations_constr = new List<object>();
 
             foreach (ParameterInfo parameter in parameters)
             {
                 var implemt = _kernel.Get(parameter.ParameterType);
-                implementations.Add(implemt);
+                implementations_constr.Add(implemt);
 
-                var param_constructor = param_constructors.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
+                var param_constructor = params_constructor.ToList().FirstOrDefault(c => c.GetType().Equals(implemt.GetType()));
                 if (param_constructor == null)
                     continue;
 
@@ -61,14 +61,20 @@ namespace MyBus.App
             }
 
             // valid
-            foreach (var item in param_constructors)
-            {
-                // lança exceção caso o obj passado para o construtor não exista como argumento na implementação
-                if (implementations.FirstOrDefault(c => c.GetType().Equals(item.GetType())) == null)
-                    throw new Exception($"{implementation.GetType()} doesn't contains '{item.GetType()}' with constructor");
-            }
+            CheckImplementationsThrow(implementations_constr, implementation, params_constructor);            
 
             return arguments;
+        }
+
+        private void CheckImplementationsThrow(List<object> implementations_constr, object implementation, object[] param_constr)
+        {
+            // valid
+            foreach (var item in param_constr)
+            {
+                // lança exceção caso o obj passado para o construtor não exista como argumento na implementação
+                if (implementations_constr.FirstOrDefault(c => c.GetType().Equals(item.GetType())) == null)
+                    throw new Exception($"{implementation.GetType()} doesn't contains '{item.GetType()}' in your constructor");
+            }
         }
 
         private object GetImplementation(Type component)

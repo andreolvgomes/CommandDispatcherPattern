@@ -1,4 +1,4 @@
-﻿namespace CommandDispatcher.DispatcherPattern
+﻿namespace CommandDispatcher.Pattern
 {
     public class DispatcherInvoke : IDispatcherInvoke
     {
