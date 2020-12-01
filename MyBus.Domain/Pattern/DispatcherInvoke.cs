@@ -5,7 +5,7 @@
         private readonly IServiceContainer _serviceContainer;
 
         /// <summary>
-        /// Dispatcher
+        /// DispatcherInvoke
         /// </summary>
         /// <param name="serviceContainer"></param>
         public DispatcherInvoke(IServiceContainer serviceContainer)
@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// Execute message event with return
+        /// Execute something inherits of the IEvent
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <param name="_event"></param>
@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// Execute message event
+        /// Execute something inherits of the IEvent
         /// </summary>
         /// <param name="_event"></param>
         public void Event(IEvent _event)
@@ -38,10 +38,11 @@
         }
 
         /// <summary>
-        /// Execute message command with return
+        /// Execute something inherits of the ICommand
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <param name="command"></param>
+        /// <param name="params_constructor"></param>
         /// <returns></returns>
         public TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor)
         {
@@ -51,9 +52,10 @@
         }
 
         /// <summary>
-        /// Execute message command
+        /// Execute something inherits of the ICommand
         /// </summary>
         /// <param name="command"></param>
+        /// <param name="params_constructor"></param>
         public void Command(ICommand command, params object[] params_constructor)
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
@@ -62,10 +64,11 @@
         }
 
         /// <summary>
-        /// Execute message query with return
+        /// Execute something inherits of the IQuery
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <param name="_query"></param>
+        /// <param name="params_constructor"></param>
         /// <returns></returns>
         public TResult Query<TResult>(IQuery<TResult> _query, params object[] params_constructor)
         {
@@ -75,10 +78,11 @@
         }
 
         /// <summary>
-        /// Execute message function with return
+        /// Execute something inherits of the IFunction
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
         /// <param name="function"></param>
+        /// <param name="params_constructor"></param>
         /// <returns></returns>
         public TResult Function<TResult>(IFunction<TResult> function, params object[] params_constructor)
         {
@@ -88,9 +92,10 @@
         }
 
         /// <summary>
-        /// Execute message function
+        /// Execute something inherits of the IFunction
         /// </summary>
         /// <param name="function"></param>
+        /// <param name="params_constructor"></param>
         public void Function(IFunction function, params object[] params_constructor)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));

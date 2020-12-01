@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "pF3+pqUK5cLZLzxwpqD729uPdjOm41WfFJhIfy8fMRYv/d8mh6NLA1NOFVZYh6JSIxwGUkshqxkE4YlsWr/Paw==",
+  "dgSpecHash": "YtNE/I7HrLE9OxkNL76Q0WEY5nHyeoeKQZ0gA5pZSoRtbi7RmjeAjwEnRIsD+ad2zv/9gaRl8matEPlFtDSovA==",
   "success": true,
-  "projectFilePath": "C:\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj",
+  "projectFilePath": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\André\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\simpleinjector\\5.1.0\\simpleinjector.5.1.0.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
-    "C:\\Users\\André\\.nuget\\packages\\system.runtime\\4.1.0\\system.runtime.4.1.0.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\simpleinjector\\5.1.0\\simpleinjector.5.1.0.nupkg.sha512",
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\system.componentmodel\\4.0.1\\system.componentmodel.4.0.1.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.runtime\\4.1.0\\system.runtime.4.1.0.nupkg.sha512"
   ],
   "logs": []
 }

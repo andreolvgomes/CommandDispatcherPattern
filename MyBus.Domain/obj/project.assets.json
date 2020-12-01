@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\André\\.nuget\\packages\\": {},
+    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+      "projectUniqueName": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
       "projectName": "CommandDispatcher",
-      "projectPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
-      "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
-      "outputPath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\obj\\",
+      "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
+      "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
+      "outputPath": "C:\\projects\\MyBus\\MyBus.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

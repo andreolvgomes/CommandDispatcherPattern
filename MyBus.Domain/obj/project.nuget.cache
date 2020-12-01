@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "70EUNYICjODXLctdaZuA3gY2iPmLczHJ++Gly296Ea/fL1zooqPuJ5CsMZnyZgamC+neFR79ag6F2uYA9KKP/w==",
+  "dgSpecHash": "qRd2c2C0dqFo6MwEVYUZ2sJbuO0i/VKY0lwjv+uA3Mi1R3MleT0x7aO9G3qcM3IP0uyeJsNviEagJI0czKk4Hg==",
   "success": true,
-  "projectFilePath": "C:\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+  "projectFilePath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
