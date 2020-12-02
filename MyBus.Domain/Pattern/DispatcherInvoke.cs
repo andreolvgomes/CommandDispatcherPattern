@@ -1,4 +1,6 @@
-﻿namespace CommandDispatcher.Pattern
+﻿using System.Data.Common;
+
+namespace CommandDispatcher.Pattern
 {
     public class DispatcherInvoke : IDispatcherInvoke
     {
@@ -44,11 +46,11 @@
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null)
+        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null, DbTransaction transaction = null)
         {
             var handlerType = (typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
-            return handler.Handle((dynamic)command);
+            return handler.Handle((dynamic)command, transaction);
         }
 
         /// <summary>
@@ -56,11 +58,11 @@
         /// </summary>
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
-        public void Command(ICommand command, object[] params_constructor = null)
+        public void Command(ICommand command, object[] params_constructor = null, DbTransaction transaction = null)
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
-            handler.Handle((dynamic)command);
+            handler.Handle((dynamic)command, transaction);
         }
 
         /// <summary>
@@ -70,11 +72,11 @@
         /// <param name="_query"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> _query, object[] params_constructor = null)
+        public TResult Query<TResult>(IQuery<TResult> _query, object[] params_constructor = null, DbTransaction transaction = null)
         {
             var handlerType = (typeof(IQueryHandler<,>).MakeGenericType(_query.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
-            return handler.Handle((dynamic)_query);
+            return handler.Handle((dynamic)_query, transaction);
         }
 
         /// <summary>
@@ -84,11 +86,11 @@
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null)
+        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null, DbTransaction transaction = null)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
-            return handler.Handle((dynamic)function);
+            return handler.Handle((dynamic)function, transaction);
         }
 
         /// <summary>
@@ -96,11 +98,11 @@
         /// </summary>
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
-        public void Function(IFunction function, object[] params_constructor = null)
+        public void Function(IFunction function, object[] params_constructor = null, DbTransaction transaction = null)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
-            handler.Handle(function);
+            handler.Handle((dynamic)function, transaction);
         }
     }
 }

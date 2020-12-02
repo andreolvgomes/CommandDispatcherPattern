@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Common;
 using System.Linq;
 using System.Reflection;
 using CommandDispatcher;
@@ -102,7 +103,7 @@ namespace MyBus.App
         {
         }
 
-        public Result Handle(CreateNewProduct command)
+        public Result Handle(CreateNewProduct command, DbTransaction transaction = null)
         {
             return Result.Default;
         }
@@ -114,7 +115,7 @@ namespace MyBus.App
         {
         }
 
-        public Result Handle(EditNewProduct command)
+        public Result Handle(EditNewProduct command, DbTransaction transaction = null)
         {
             return Result.Default;
         }
