@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace CommandDispatcher
 {
@@ -11,6 +13,6 @@ namespace CommandDispatcher
     public interface IFunctionHandler<in TFunction, TResult>
         where TFunction : IFunction<TResult>
     {
-        TResult Handle(TFunction function, DbTransaction transaction = null);
+        TResult Handle(TFunction function, SqlTransaction transaction = null);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using CommandDispatcher;
+using System.Data;
 using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace MyBus.Tests.Commands
 {
@@ -13,7 +15,7 @@ namespace MyBus.Tests.Commands
             _dispatcher = dispatcher;
         }
 
-        public bool Handle(CreateNewCommand command, DbTransaction transaction = null)
+        public bool Handle(CreateNewCommand command, SqlTransaction transaction = null)
         {
             return true;
         }

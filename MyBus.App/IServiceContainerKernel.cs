@@ -23,7 +23,7 @@ namespace MyBus.App
         public object GetInstance(Type serviceType, params object[] params_constructor)
         {
             List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-            if (params_constructor.Length > 0)
+            if (params_constructor != null && params_constructor.Length > 0)
                 arguments = Arguments(serviceType, params_constructor);
 
             return _kernel.Get(serviceType, arguments.ToArray());

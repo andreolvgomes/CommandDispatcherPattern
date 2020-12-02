@@ -299,6 +299,9 @@
       "CommandDispatcher/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.2"
+        },
         "compile": {
           "bin/placeholder/CommandDispatcher.dll": {}
         },
@@ -1422,7 +1425,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using CommandDispatcher.Pattern;
 
 namespace CommandDispatcher
@@ -43,9 +46,9 @@ namespace CommandDispatcher
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null)
+        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Command<TResult>(command, params_constructor);
+            return _dispatcher.Command<TResult>(command, params_constructor: params_constructor, transaction: transaction);
         }
 
         /// <summary>
@@ -53,9 +56,9 @@ namespace CommandDispatcher
         /// </summary>
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
-        public void Command(ICommand command, object[] params_constructor = null)
+        public void Command(ICommand command, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            _dispatcher.Command(command, params_constructor);
+            _dispatcher.Command(command, params_constructor: params_constructor, transaction: transaction);
         }
 
         /// <summary>
@@ -65,9 +68,9 @@ namespace CommandDispatcher
         /// <param name="query"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> query, object[] params_constructor = null)
+        public TResult Query<TResult>(IQuery<TResult> query, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Query<TResult>(query, params_constructor);
+            return _dispatcher.Query<TResult>(query, params_constructor: params_constructor, transaction: transaction);
         }
 
         /// <summary>
@@ -77,9 +80,9 @@ namespace CommandDispatcher
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null)
+        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Function<TResult>(function, params_constructor);
+            return _dispatcher.Function<TResult>(function, params_constructor: params_constructor, transaction: transaction);
         }
 
         /// <summary>
@@ -87,9 +90,9 @@ namespace CommandDispatcher
         /// </summary>
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
-        public void Function(IFunction function, object[] params_constructor = null)
+        public void Function(IFunction function, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            _dispatcher.Function(function, params_constructor);
+            _dispatcher.Function(function, params_constructor: params_constructor, transaction: transaction);
         }
     }
 }

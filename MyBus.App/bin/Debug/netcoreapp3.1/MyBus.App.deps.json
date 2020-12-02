@@ -203,6 +203,9 @@
         }
       },
       "CommandDispatcher/1.0.0": {
+        "dependencies": {
+          "System.Data.SqlClient": "4.8.2"
+        },
         "runtime": {
           "CommandDispatcher.dll": {}
         }
