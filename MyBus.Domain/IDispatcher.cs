@@ -8,12 +8,12 @@ namespace CommandDispatcher
         TResult Event<TResult>(IEvent<TResult> _event);
         void Event(IEvent _event);
 
-        TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor);
-        void Command(ICommand command, params object[] params_constructor);
+        TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null);
+        void Command(ICommand command, object[] params_constructor = null);
 
-        TResult Function<TResult>(IFunction<TResult> _function, params object[] params_constructor);
-        void Function(IFunction function, params object[] params_constructor);
+        TResult Function<TResult>(IFunction<TResult> _function, object[] params_constructor = null);
+        void Function(IFunction function, object[] params_constructor = null);
 
-        TResult Query<TResult>(IQuery<TResult> query, params object[] params_constructor);
+        TResult Query<TResult>(IQuery<TResult> query, object[] params_constructor = null);
     }
 }

@@ -51,17 +51,17 @@ namespace MyBus.App
             _kernel.Bind(typeof(ICommandHandler<EditNewProduct>)).To(typeof(EditHandler));
 
             // verify binding
-            foreach (var item in _kernel.GetBindings())
-                _kernel.Get(item);
+            //foreach (var item in _kernel.GetBindings())
+            //    _kernel.Get(item);
 
             IDispatcher dispatcher = _kernel.Get<IDispatcher>();
 
             IConnectionRemoto cnn = _kernel.Get<IConnectionRemoto>();
             IConnectionLocal cnnlocal = _kernel.Get<IConnectionLocal>();
 
-            dispatcher.Command(new CreateNewProduct(), cnn, cnnlocal);
-            dispatcher.Command(new CreateNewProduct(), cnn, cnnlocal);
-            dispatcher.Command(new EditNewProduct(), cnn, cnnlocal);
+            dispatcher.Command(new CreateNewProduct(), new object[] { cnn, cnnlocal });
+            dispatcher.Command(new CreateNewProduct(), new object[] { cnn, cnnlocal });
+            dispatcher.Command(new EditNewProduct(), new object[] { cnn, cnnlocal });
         }
 
         public T Get<T>() where T : class

@@ -6,6 +6,6 @@ namespace CommandDispatcher.Pattern.Interfaces
 {
     public interface IQuerier
     {
-        TResult Query<TResult>(IQuery<TResult> _query, params object[] params_constructor);
+        TResult Query<TResult>(IQuery<TResult> _query, object[] params_constructor = null);
     }
 }

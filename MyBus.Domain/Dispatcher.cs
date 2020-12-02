@@ -43,7 +43,7 @@ namespace CommandDispatcher
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor)
+        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null)
         {
             return _dispatcher.Command<TResult>(command, params_constructor);
         }
@@ -53,7 +53,7 @@ namespace CommandDispatcher
         /// </summary>
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
-        public void Command(ICommand command, params object[] params_constructor)
+        public void Command(ICommand command, object[] params_constructor = null)
         {
             _dispatcher.Command(command, params_constructor);
         }
@@ -65,7 +65,7 @@ namespace CommandDispatcher
         /// <param name="query"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> query, params object[] params_constructor)
+        public TResult Query<TResult>(IQuery<TResult> query, object[] params_constructor = null)
         {
             return _dispatcher.Query<TResult>(query, params_constructor);
         }
@@ -77,7 +77,7 @@ namespace CommandDispatcher
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Function<TResult>(IFunction<TResult> function, params object[] params_constructor)
+        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null)
         {
             return _dispatcher.Function<TResult>(function, params_constructor);
         }
@@ -87,7 +87,7 @@ namespace CommandDispatcher
         /// </summary>
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
-        public void Function(IFunction function, params object[] params_constructor)
+        public void Function(IFunction function, object[] params_constructor = null)
         {
             _dispatcher.Function(function, params_constructor);
         }

@@ -44,7 +44,7 @@
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor)
+        public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null)
         {
             var handlerType = (typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
@@ -56,7 +56,7 @@
         /// </summary>
         /// <param name="command"></param>
         /// <param name="params_constructor"></param>
-        public void Command(ICommand command, params object[] params_constructor)
+        public void Command(ICommand command, object[] params_constructor = null)
         {
             var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
@@ -70,7 +70,7 @@
         /// <param name="_query"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> _query, params object[] params_constructor)
+        public TResult Query<TResult>(IQuery<TResult> _query, object[] params_constructor = null)
         {
             var handlerType = (typeof(IQueryHandler<,>).MakeGenericType(_query.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
@@ -84,7 +84,7 @@
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Function<TResult>(IFunction<TResult> function, params object[] params_constructor)
+        public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType(), typeof(TResult)));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
@@ -96,7 +96,7 @@
         /// </summary>
         /// <param name="function"></param>
         /// <param name="params_constructor"></param>
-        public void Function(IFunction function, params object[] params_constructor)
+        public void Function(IFunction function, object[] params_constructor = null)
         {
             var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);

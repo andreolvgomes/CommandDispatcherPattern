@@ -6,7 +6,7 @@ namespace CommandDispatcher.Pattern.Interfaces
 {
     public interface ICommander
     {
-        TResult Command<TResult>(ICommand<TResult> command, params object[] params_constructor);
-        void Command(ICommand command, params object[] params_constructor);
+        TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null);
+        void Command(ICommand command, object[] params_constructor = null);
     }
 }
