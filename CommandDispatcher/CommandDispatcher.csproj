@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D17FC0FD-02C9-4EAC-B954-54D959031DCE}</ProjectGuid>
+    <ProjectGuid>{AAF365CC-437A-4C45-B513-D2E35F083176}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>My.Tests</RootNamespace>
-    <AssemblyName>My.Tests</AssemblyName>
+    <RootNamespace>CommandDispatcher</RootNamespace>
+    <AssemblyName>CommandDispatcher</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,24 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandsHandlers.cs" />
-    <Compile Include="Commands\CreateNewCommand.cs" />
-    <Compile Include="Events\CreateNewEvent.cs" />
-    <Compile Include="Events\EventsHandlers.cs" />
-    <Compile Include="Injetct.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
+    <Compile Include="DispatcherInvoke.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
+    <Compile Include="Functions\IFunction.cs" />
+    <Compile Include="Functions\IFunctionHandler.cs" />
+    <Compile Include="IDispatcherInvoke.cs" />
+    <Compile Include="Interfaces\ICommander.cs" />
+    <Compile Include="Interfaces\IEventer.cs" />
+    <Compile Include="Interfaces\IExecuter.cs" />
+    <Compile Include="Interfaces\IQuerier.cs" />
+    <Compile Include="IServiceContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\GetProductQuery.cs" />
-    <Compile Include="Queries\QueriesHandlers.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CommandDispatcher\CommandDispatcher.csproj">
-      <Project>{aaf365cc-437a-4c45-b513-d2e35f083176}</Project>
-      <Name>CommandDispatcher</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{c183b29a-cc97-49d5-8c84-c7bd180f68b1}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryHandler.cs" />
+    <Compile Include="Result.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

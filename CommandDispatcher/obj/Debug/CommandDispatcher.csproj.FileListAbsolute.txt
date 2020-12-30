@@ -1,0 +1,6 @@
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatcher.dll
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatcher.pdb
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.csprojAssemblyReference.cache
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.csproj.CoreCompileInputs.cache
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.dll
+C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.pdb
