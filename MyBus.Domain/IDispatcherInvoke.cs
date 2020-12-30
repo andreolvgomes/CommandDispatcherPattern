@@ -1,6 +1,6 @@
-﻿using CommandDispatcher.Pattern.Interfaces;
+﻿using CommandDispatcher.Interfaces;
 
-namespace CommandDispatcher.Pattern
+namespace CommandDispatcher
 {
     public interface IDispatcherInvoke : IExecuter, IEventer, IQuerier, ICommander
     {

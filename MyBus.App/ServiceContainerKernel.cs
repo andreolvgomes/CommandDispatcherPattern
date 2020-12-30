@@ -5,17 +5,18 @@ using System.Reflection;
 using System.Text;
 using CommandDispatcher;
 using Ninject;
+using Ninject.Activation.Blocks;
 using Ninject.Parameters;
 
 namespace MyBus.App
 {
-    public class IServiceContainerKernel : IServiceContainer
+    public class ServiceContainerKernel : IServiceContainer
     {
         private readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
 
         private readonly IKernel _kernel;
 
-        public IServiceContainerKernel(IKernel kernel)
+        public ServiceContainerKernel(IKernel kernel)
         {
             _kernel = kernel;
         }

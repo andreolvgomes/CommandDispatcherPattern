@@ -1,5 +1,6 @@
 ﻿using CommandDispatcher;
-using CommandDispatcher.Pattern;
+using CommandDispatcher;
+using Domain.Messenger;
 using Microsoft.Extensions.DependencyInjection;
 using My.Tests.Events;
 using My.Tests.Queries;

@@ -9,6 +9,7 @@
       "MyBus.App/1.0.0": {
         "dependencies": {
           "CommandDispatcher": "1.0.0",
+          "Domain": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.0",
           "My.Tests": "1.0.0",
           "Ninject": "3.3.4",
@@ -210,9 +211,18 @@
           "CommandDispatcher.dll": {}
         }
       },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "CommandDispatcher": "1.0.0"
+        },
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
       "My.Tests/1.0.0": {
         "dependencies": {
           "CommandDispatcher": "1.0.0",
+          "Domain": "1.0.0",
           "SimpleInjector": "5.1.0"
         },
         "runtime": {
@@ -389,6 +399,11 @@
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
     "CommandDispatcher/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

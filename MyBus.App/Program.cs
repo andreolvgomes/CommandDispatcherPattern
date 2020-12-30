@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CommandDispatcher;
 using My.Tests.Events;
 using My.Tests.Queries;
@@ -16,6 +17,11 @@ namespace MyBus.App
         }
     }
 
+    public class Test
+    {
+        public static List<int> List { get; set; }
+    }
+
     public class Program
     {
         public static void Main(string[] args)
@@ -25,14 +31,14 @@ namespace MyBus.App
             Kernel_TwoConnection.Test();
 
             IoCKernel.Ins.Init();
-            IoCServiceCollection.Ins.Init();
-            IoCContainer.Ins.Init();
+            //IoCServiceCollection.Ins.Init();
+            //IoCContainer.Ins.Init();
 
-            IDispatcher dispatcher = IoCContainer.Ins.Get<IDispatcher>();
+            //IDispatcher dispatcher = IoCContainer.Ins.Get<IDispatcher>();
 
-            dispatcher.Command(new CreateNewCommand());
-            dispatcher.Event(new CreateNewEvent());
-            dispatcher.Query<string>(new GetProductQuery());
+            //dispatcher.Command(new CreateNewCommand());
+            //dispatcher.Event(new CreateNewEvent());
+            //dispatcher.Query<string>(new GetProductQuery());
         }
     }
 

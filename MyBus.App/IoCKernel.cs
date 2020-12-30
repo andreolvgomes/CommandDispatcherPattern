@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection;
 using CommandDispatcher;
-using CommandDispatcher.Pattern;
+using CommandDispatcher;
+using Domain.Messenger;
 using My.Tests.Events;
 using My.Tests.Queries;
 using MyBus.Tests.Commands;
 using MyBus.Tests.Events;
 using Ninject;
-using Ninject.Infrastructure;
-using Ninject.Planning.Bindings;
+using Ninject.Activation.Blocks;
 using SimpleInjector;
 using SimpleInjector.Diagnostics;
 using SimpleInjector.Lifestyles;
@@ -45,7 +42,7 @@ namespace MyBus.App
             // requared
             _kernel.Bind<IDispatcherInvoke>().To<DispatcherInvoke>();
             _kernel.Bind<IDispatcher>().To<Dispatcher>();
-            _kernel.Bind<IServiceContainer>().To<IServiceContainerKernel>();
+            _kernel.Bind<IServiceContainer>().To<ServiceContainerKernel>();
 
             _kernel.Bind<IConnectionLocal>().ToMethod(ctx => new ConnectionLocal("ConnectionLocal: " + Guid.NewGuid().ToString()));
             _kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto("ConnectionRemoto: " + Guid.NewGuid().ToString()));
@@ -62,9 +59,23 @@ namespace MyBus.App
             IConnectionRemoto cnn = _kernel.Get<IConnectionRemoto>();
             IConnectionLocal cnnlocal = _kernel.Get<IConnectionLocal>();
 
+            //var adsf = _kernel.Get<CreateNewProduct>();
+            //var adsf2 = _kernel.Get<CreateNewProduct>();
+            //var adsf3 = _kernel.Get<CreateNewProduct>();
+
             dispatcher.Command(new CreateNewProduct(), new object[] { cnn, cnnlocal });
-            dispatcher.Command(new CreateNewProduct(), new object[] { cnn, cnnlocal });
-            dispatcher.Command(new EditNewProduct(), new object[] { cnn, cnnlocal });
+
+            var x = _kernel.Get<EditNewProduct>();
+
+            dispatcher.Command(new EditNewProduct());
+
+            using (IActivationBlock scolpe = _kernel.BeginBlock())
+            {
+                cnn = scolpe.Get<IConnectionRemoto>();
+                cnnlocal = scolpe.Get<IConnectionLocal>();
+            }
+
+            //dispatcher.Command(new EditNewProduct(), new object[] { cnn, cnnlocal });
         }
 
         public T Get<T>() where T : class
@@ -72,26 +83,6 @@ namespace MyBus.App
             return _kernel.Get<T>();
         }
     }
-
-    public static class KernelExtensions
-    {
-        public static void Verify(this IKernel kernel)
-        {
-            var bindings = GetBindings(kernel);
-            foreach (var item in bindings)
-            {
-                var j = kernel.Get(item);
-            }
-        }
-
-        public static Type[] GetBindings(this IKernel kernel)
-        {
-            return ((Multimap<Type, IBinding>)typeof(KernelBase)
-                .GetField("bindings", BindingFlags.NonPublic | BindingFlags.Instance)
-                .GetValue(kernel)).Select(x => x.Key).ToArray();
-        }
-    }
-
 
     #region classes de testes
 
@@ -101,19 +92,25 @@ namespace MyBus.App
 
     public class CreateHandler : ICommandHandler<CreateNewProduct>
     {
-        public CreateHandler(IConnectionRemoto cnnremo, IConnectionLocal cnnlocal)
+        private IDispatcher dispatcher;
+        private IConnectionRemoto cnnremo;
+
+        public CreateHandler(IDispatcher dispatcher,IConnectionRemoto cnnremo, IConnectionLocal cnnlocal)
         {
+            this.dispatcher = dispatcher;
+            this.cnnremo = cnnremo;
         }
 
         public Result Handle(CreateNewProduct command, SqlTransaction transaction = null)
         {
+            //dispatcher.Command(new EditNewProduct(), new object[] { this.cnnremo });
             return Result.Default;
         }
     }
 
     public class EditHandler : ICommandHandler<EditNewProduct>
     {
-        public EditHandler(IConnectionRemoto cnnremo)
+        public EditHandler()
         {
         }
 

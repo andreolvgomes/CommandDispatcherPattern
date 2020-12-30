@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CommandDispatcher.Pattern.Interfaces
+namespace CommandDispatcher.Interfaces
 {
     public interface IEventer
     {

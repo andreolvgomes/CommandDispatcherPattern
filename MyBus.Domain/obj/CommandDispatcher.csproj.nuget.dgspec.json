@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj": {}
+    "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {}
   },
   "projects": {
-    "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj": {
+    "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
+        "projectUniqueName": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
         "projectName": "CommandDispatcher",
-        "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
-        "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\MyBus\\MyBus.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+        "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -40,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.Data.SqlClient": {
               "target": "Package",
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,10 +1,7 @@
 ﻿using CommandDispatcher;
-using CommandDispatcher.Pattern;
-using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 
-namespace CommandDispatcher
+namespace Domain.Messenger
 {
     public interface IDispatcher
     {

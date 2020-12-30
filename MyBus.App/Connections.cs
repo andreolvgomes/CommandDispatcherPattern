@@ -25,7 +25,7 @@ namespace MyBus.App
         public IConnectionLocal(string connectionString) : base(connectionString) { }
     }
 
-    public abstract class IConnectionMaster
+    public abstract class IConnectionMaster : IDisposable
     {
         public override string ToString()
         {
@@ -45,6 +45,11 @@ namespace MyBus.App
 
         public void Execute()
         {
+        }
+
+        public void Dispose()
+        {
+            
         }
     }
 }

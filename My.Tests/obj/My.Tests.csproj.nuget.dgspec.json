@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj": {}
+    "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj": {}
   },
   "projects": {
-    "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj": {
+    "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj",
-        "projectName": "My.Tests",
-        "projectPath": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj",
-        "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\MyBus\\My.Tests\\obj\\",
+        "projectUniqueName": "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CommandDispatcherPattern\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,9 +26,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj": {
-                "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj"
+              "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+                "projectPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
               }
             }
           }
@@ -44,6 +42,68 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj",
+        "projectName": "My.Tests",
+        "projectPath": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj",
+        "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj"
+              },
+              "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+                "projectPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "SimpleInjector": {
               "target": "Package",
@@ -65,24 +125,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj": {
+    "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
+        "projectUniqueName": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
         "projectName": "CommandDispatcher",
-        "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj",
-        "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\MyBus\\MyBus.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj",
+        "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,6 +151,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -105,6 +163,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.Data.SqlClient": {
               "target": "Package",
@@ -126,7 +185,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

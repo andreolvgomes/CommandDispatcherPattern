@@ -1,22 +1,19 @@
-﻿using System;
-using System.Data;
-using System.Data.Common;
+﻿using System.Data;
 using System.Data.SqlClient;
-using CommandDispatcher.Pattern;
 
 namespace CommandDispatcher
 {
-    public class Dispatcher : IDispatcher
+    public class DispatcherInvoke : IDispatcherInvoke
     {
-        private readonly IDispatcherInvoke _dispatcher;
+        private readonly IServiceContainer _serviceContainer;
 
         /// <summary>
-        /// Dispatcher
+        /// DispatcherInvoke
         /// </summary>
-        /// <param name="dispatcher"></param>
-        public Dispatcher(IDispatcherInvoke dispatcher)
+        /// <param name="serviceContainer"></param>
+        public DispatcherInvoke(IServiceContainer serviceContainer)
         {
-            _dispatcher = dispatcher;
+            _serviceContainer = serviceContainer;
         }
 
         /// <summary>
@@ -27,7 +24,9 @@ namespace CommandDispatcher
         /// <returns></returns>
         public TResult Event<TResult>(IEvent<TResult> _event)
         {
-            return _dispatcher.Event<TResult>(_event);
+            var handlerType = (typeof(IEventHandler<,>).MakeGenericType(_event.GetType(), typeof(TResult)));
+            dynamic handler = _serviceContainer.GetInstance(handlerType);
+            return handler.Handle((dynamic)_event);
         }
 
         /// <summary>
@@ -36,7 +35,9 @@ namespace CommandDispatcher
         /// <param name="_event"></param>
         public void Event(IEvent _event)
         {
-            _dispatcher.Event(_event);
+            var handlerType = typeof(IEventHandler<>).MakeGenericType(_event.GetType());
+            dynamic handler = _serviceContainer.GetInstance(handlerType);
+            handler.Handle((dynamic)_event);
         }
 
         /// <summary>
@@ -48,7 +49,9 @@ namespace CommandDispatcher
         /// <returns></returns>
         public TResult Command<TResult>(ICommand<TResult> command, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Command<TResult>(command, params_constructor: params_constructor, transaction: transaction);
+            var handlerType = (typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult)));
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
+            return handler.Handle((dynamic)command, transaction);
         }
 
         /// <summary>
@@ -58,19 +61,23 @@ namespace CommandDispatcher
         /// <param name="params_constructor"></param>
         public void Command(ICommand command, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            _dispatcher.Command(command, params_constructor: params_constructor, transaction: transaction);
+            var handlerType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
+            handler.Handle((dynamic)command, transaction);
         }
 
         /// <summary>
         /// Execute something inherits of the IQuery
         /// </summary>
         /// <typeparam name="TResult"></typeparam>
-        /// <param name="query"></param>
+        /// <param name="_query"></param>
         /// <param name="params_constructor"></param>
         /// <returns></returns>
-        public TResult Query<TResult>(IQuery<TResult> query, object[] params_constructor = null, SqlTransaction transaction = null)
+        public TResult Query<TResult>(IQuery<TResult> _query, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Query<TResult>(query, params_constructor: params_constructor, transaction: transaction);
+            var handlerType = (typeof(IQueryHandler<,>).MakeGenericType(_query.GetType(), typeof(TResult)));
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
+            return handler.Handle((dynamic)_query, transaction);
         }
 
         /// <summary>
@@ -82,7 +89,9 @@ namespace CommandDispatcher
         /// <returns></returns>
         public TResult Function<TResult>(IFunction<TResult> function, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            return _dispatcher.Function<TResult>(function, params_constructor: params_constructor, transaction: transaction);
+            var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType(), typeof(TResult)));
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
+            return handler.Handle((dynamic)function, transaction);
         }
 
         /// <summary>
@@ -92,7 +101,9 @@ namespace CommandDispatcher
         /// <param name="params_constructor"></param>
         public void Function(IFunction function, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            _dispatcher.Function(function, params_constructor: params_constructor, transaction: transaction);
+            var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));
+            dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
+            handler.Handle((dynamic)function, transaction);
         }
     }
 }

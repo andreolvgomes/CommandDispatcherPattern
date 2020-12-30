@@ -5,7 +5,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace CommandDispatcher.Pattern.Interfaces
+namespace CommandDispatcher.Interfaces
 {
     public interface ICommander
     {

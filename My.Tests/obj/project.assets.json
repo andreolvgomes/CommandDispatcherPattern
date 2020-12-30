@@ -186,6 +186,19 @@
         "runtime": {
           "bin/placeholder/CommandDispatcher.dll": {}
         }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CommandDispatcher": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
@@ -693,32 +706,34 @@
       "type": "project",
       "path": "../MyBus.Domain/CommandDispatcher.csproj",
       "msbuildProject": "../MyBus.Domain/CommandDispatcher.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "CommandDispatcher >= 1.0.0",
+      "Domain >= 1.0.0",
       "SimpleInjector >= 5.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\André\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj",
+      "projectUniqueName": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj",
       "projectName": "My.Tests",
-      "projectPath": "C:\\projects\\MyBus\\My.Tests\\My.Tests.csproj",
-      "packagesPath": "C:\\Users\\André.DESKTOP-0DUHK97\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\MyBus\\My.Tests\\obj\\",
+      "projectPath": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\My.Tests.csproj",
+      "packagesPath": "C:\\Users\\André\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\CommandDispatcherPattern\\My.Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\André.DESKTOP-0DUHK97\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\André\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -730,9 +745,13 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj": {
-              "projectPath": "C:\\projects\\MyBus\\MyBus.Domain\\CommandDispatcher.csproj"
+            "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Projects\\CommandDispatcherPattern\\Domain\\Domain.csproj"
+            },
+            "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj": {
+              "projectPath": "C:\\Projects\\CommandDispatcherPattern\\MyBus.Domain\\CommandDispatcher.csproj"
             }
           }
         }
@@ -745,6 +764,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "SimpleInjector": {
             "target": "Package",
@@ -766,7 +786,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

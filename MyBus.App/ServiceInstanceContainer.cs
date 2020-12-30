@@ -15,6 +15,11 @@ namespace MyBus.App
             _container = container;
         }
 
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public object GetInstance(Type serviceType, params object[] params_constructor)
         {
             return _container.GetInstance(serviceType);

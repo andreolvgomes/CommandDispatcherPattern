@@ -1,6 +1,7 @@
 ﻿using System;
 using CommandDispatcher;
-using CommandDispatcher.Pattern;
+using CommandDispatcher;
+using Domain.Messenger;
 using My.Tests.Events;
 using My.Tests.Queries;
 using MyBus.Tests.Commands;
@@ -41,9 +42,9 @@ namespace MyBus.App
             _container.Register<IServiceContainer, ServiceInstanceContainer>();
 
             //_container.Register<ClassWithDisposable>();
-            _container.RegisterDisposableTransient<Produtos>();
+            //_container.RegisterDisposableTransient<Produtos>();
 
-            _container.RegisterDisposableTransient<IClassWithDisposable, ClassWithDisposable>();
+            //_container.RegisterDisposableTransient<IClassWithDisposable, ClassWithDisposable>();
             //_container.Register<IClassWithDisposable, ClassWithDisposable>();
 
             //_container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
@@ -73,30 +74,30 @@ namespace MyBus.App
         }
     }
 
-    public static class TEste
-    {
-        public static void RegisterDisposableTransient<TConcrete>(this Container container)
-                where TConcrete : class, IDisposable
-        {
-            var scoped = Lifestyle.Scoped;
-            var reg = Lifestyle.Transient.CreateRegistration<TConcrete>(container);
+    //public static class TEste
+    //{
+    //    public static void RegisterDisposableTransient<TConcrete>(this Container container)
+    //            where TConcrete : class, IDisposable
+    //    {
+    //        var scoped = Lifestyle.Scoped;
+    //        var reg = Lifestyle.Transient.CreateRegistration<TConcrete>(container);
 
-            reg.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent, "suppres");
+    //        reg.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent, "suppres");
 
-            container.AddRegistration(typeof(TConcrete), reg);
-            container.RegisterInitializer<TConcrete>(o => scoped.RegisterForDisposal(container, o));
-        }
+    //        container.AddRegistration(typeof(TConcrete), reg);
+    //        container.RegisterInitializer<TConcrete>(o => scoped.RegisterForDisposal(container, o));
+    //    }
 
-        public static void RegisterDisposableTransient<TService, TImplementation>(this Container c)
-                where TImplementation : class, IDisposable, TService
-                where TService : class
-        {
-            var scoped = Lifestyle.Scoped;
-            var createRegistration = Lifestyle.Transient.CreateRegistration<TImplementation>(c);
+    //    public static void RegisterDisposableTransient<TService, TImplementation>(this Container c)
+    //            where TImplementation : class, IDisposable, TService
+    //            where TService : class
+    //    {
+    //        var scoped = Lifestyle.Scoped;
+    //        var createRegistration = Lifestyle.Transient.CreateRegistration<TImplementation>(c);
 
-            createRegistration.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent, "ignore");
-            c.AddRegistration(typeof(TService), createRegistration);
-            c.RegisterInitializer<TImplementation>(o => scoped.RegisterForDisposal(c, o));
-        }
-    }
+    //        createRegistration.SuppressDiagnosticWarning(DiagnosticType.DisposableTransientComponent, "ignore");
+    //        c.AddRegistration(typeof(TService), createRegistration);
+    //        c.RegisterInitializer<TImplementation>(o => scoped.RegisterForDisposal(c, o));
+    //    }
+    //}
 }
