@@ -3,12 +3,10 @@ C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.csprojAssembl
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\MyBus.App.exe.config
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\MyBus.App.exe
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\MyBus.App.pdb
-C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.dll
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\Domain.dll
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\My.Tests.dll
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\Ninject.dll
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\SimpleInjector.dll
-C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.pdb
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\Domain.pdb
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\My.Tests.pdb
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\Ninject.xml
@@ -16,3 +14,5 @@ C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\SimpleInjector.xml
 C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.csproj.CopyComplete
 C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.exe
 C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.pdb
+C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.dll
+C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.pdb
