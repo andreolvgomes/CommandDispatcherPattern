@@ -25,9 +25,36 @@ namespace MyBus.App
             IConnectionRemoto cnnrem = new ConnectionRemoto(Guid.NewGuid().ToString());
             IConnectionLocal cnnloc = new ConnectionLocal(Guid.NewGuid().ToString());
             IUnitOfWork uow = kernel.Get<IUnitOfWork>();
+            var test = Get<IUnitOfWork>(cnnrem);
 
             Execute(new SalvarExecute(), cnnrem);
             Execute(new EditarExecute(), cnnrem);
+        }
+
+        public static T Get<T>(params object[] param_constructors)
+        {
+            var implementation = GetImplementation<T>();
+
+            List<ConstructorArgument> arguments = new List<ConstructorArgument>();
+            if (param_constructors.Length > 0)
+                arguments = Arguments(param_constructors, implementation.GetType());
+
+            dynamic obj = kernel.Get(implementation.GetType(), arguments.ToArray());
+            return obj;
+        }
+
+        private static readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
+
+        private static object GetImplementation<T>()
+        {
+            var type = typeof(T);
+            object implementation;
+            if (!instances.TryGetValue(type, out implementation))
+            {
+                implementation = kernel.Get(type);
+                instances.Add(type, implementation);
+            }
+            return implementation;
         }
 
         public static void Execute(IExecute execute, params object[] param_constructors)
@@ -104,23 +131,22 @@ namespace MyBus.App
     {
         public override string ToString() { return Id.ToString(); }
 
-        private SqlConnection _cnn;
-        public SqlConnection Cnn { get { return _cnn; } }
-
         private Guid _id;
         public Guid Id { get { return _id; } }
 
-        public UnitOfWork()
+        public IConnectionRemoto Cnn { get; set; }
+
+        public UnitOfWork(IConnectionRemoto cnn)
         {
             _id = Guid.NewGuid();
-            _cnn = new SqlConnection("");
+            Cnn = cnn;
         }
     }
 
     public interface IUnitOfWork
     {
         Guid Id { get; }
-        SqlConnection Cnn { get; }
+        IConnectionRemoto Cnn { get; set; }
     }
 
     public interface IExecuteHandler<T> where T : IExecute

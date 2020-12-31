@@ -30,15 +30,6 @@ namespace MyBus.App
             return _kernel.Get(serviceType, arguments.ToArray());
         }
 
-        //public TService GetInstance<TService>(params object[] params_constructor) where TService : class
-        //{
-        //    List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-        //    if (params_constructor.Length > 0)
-        //        arguments = Arguments(params_constructor, serviceType);
-
-        //    return _kernel.GetInstance<TService>();
-        //}
-
         private List<ConstructorArgument> Arguments(Type component, object[] params_constructor)
         {
             object implementation = GetImplementation(component);
