@@ -33,28 +33,8 @@ namespace MyBus.App
 
         public static T Get<T>(params object[] param_constructors)
         {
-            var implementation = GetImplementation<T>();
-
-            List<ConstructorArgument> arguments = new List<ConstructorArgument>();
-            if (param_constructors.Length > 0)
-                arguments = Arguments(param_constructors, implementation.GetType());
-
-            dynamic obj = kernel.Get(implementation.GetType(), arguments.ToArray());
-            return obj;
-        }
-
-        private static readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
-
-        private static object GetImplementation<T>()
-        {
-            var type = typeof(T);
-            object implementation;
-            if (!instances.TryGetValue(type, out implementation))
-            {
-                implementation = kernel.Get(type);
-                instances.Add(type, implementation);
-            }
-            return implementation;
+            ServiceContainerKernel service = new ServiceContainerKernel(kernel);
+            return (T)service.GetInstance(typeof(T), param_constructors);
         }
 
         public static void Execute(IExecute execute, params object[] param_constructors)
