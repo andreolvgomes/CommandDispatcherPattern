@@ -20,6 +20,7 @@ namespace MyBus.App
             kernel.Bind<IExecuteHandler<EditarExecute>>().To<SalvarHandler>();
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             kernel.Bind<IConnection>().To<Connection>();
+            kernel.Bind<Test>().To<Test>();
             kernel.Bind<IConnectionRemoto>().ToMethod(ctx => new ConnectionRemoto(Guid.NewGuid().ToString()));
 
             IConnectionRemoto cnnrem = new ConnectionRemoto(Guid.NewGuid().ToString());
@@ -29,6 +30,13 @@ namespace MyBus.App
 
             Execute(new SalvarExecute(), cnnrem);
             Execute(new EditarExecute(), cnnrem);
+
+            var test2 = Get<Test>();
+            var test3 = kernel.Get<Test>();
+        }
+
+        public class Test
+        {
         }
 
         public static T Get<T>(params object[] param_constructors)

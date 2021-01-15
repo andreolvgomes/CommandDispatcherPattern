@@ -16,3 +16,5 @@ C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.exe
 C:\Projects\CommandDispatcherPattern\MyBus.App\obj\Debug\MyBus.App.pdb
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.dll
 C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\CommandDispatcher.pdb
+C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\AutoMapper.dll
+C:\Projects\CommandDispatcherPattern\MyBus.App\bin\Debug\AutoMapper.xml

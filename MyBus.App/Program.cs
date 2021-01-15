@@ -26,6 +26,7 @@ namespace MyBus.App
     {
         public static void Main(string[] args)
         {
+            KernelArguments.Execute();
             Kernel_ArgumentsConstructor.Teste();
             Kernel_Scolpe.Test();
             Kernel_TwoConnection.Test();
