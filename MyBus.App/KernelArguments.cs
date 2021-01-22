@@ -12,6 +12,8 @@ namespace MyBus.App
 {
     public class KernelArguments
     {
+        private static readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
+
         public class MappingConfiguration
         {
             public static MapperConfiguration Register()
@@ -96,8 +98,6 @@ namespace MyBus.App
 
             return _kernel.Get(type, arguments.ToArray());
         }
-
-        private static readonly Dictionary<Type, object> instances = new Dictionary<Type, object>();
 
         private static object GetImplementation(Type component)
         {
