@@ -4,3 +4,9 @@ C:\Projects\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatch
 C:\Projects\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatcher.pdb
 C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.dll
 C:\Projects\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.pdb
+C:\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatcher.dll
+C:\CommandDispatcherPattern\CommandDispatcher\bin\Debug\CommandDispatcher.pdb
+C:\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.csprojAssemblyReference.cache
+C:\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.csproj.CoreCompileInputs.cache
+C:\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.dll
+C:\CommandDispatcherPattern\CommandDispatcher\obj\Debug\CommandDispatcher.pdb

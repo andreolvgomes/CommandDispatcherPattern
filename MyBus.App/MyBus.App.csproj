@@ -52,19 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassWithDisposable.cs" />
-    <Compile Include="Connections.cs" />
-    <Compile Include="IoCContainer.cs" />
     <Compile Include="IoCKernel.cs" />
-    <Compile Include="KernelArguments.cs" />
-    <Compile Include="KernelExtensions.cs" />
-    <Compile Include="Kernel_ArgumentsConstructor.cs" />
-    <Compile Include="Kernel_Scolpe.cs" />
-    <Compile Include="Kernel_TwoConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceContainerKernel.cs" />
-    <Compile Include="ServiceInstanceContainer.cs" />
+    <Compile Include="ServiceContainerNinject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

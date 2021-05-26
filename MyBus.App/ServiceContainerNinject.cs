@@ -11,14 +11,14 @@ using Ninject.Parameters;
 
 namespace MyBus.App
 {
-    public class ServiceContainerKernel : IServiceContainer
+    public class ServiceContainerNinject : IServiceContainer
     {
         private readonly static Dictionary<Type, object> instances = new Dictionary<Type, object>();
         private readonly static Dictionary<Type, object> instancesOfCnn = new Dictionary<Type, object>();
 
         private readonly IKernel _kernel;
 
-        public ServiceContainerKernel(IKernel kernel)
+        public ServiceContainerNinject(IKernel kernel)
         {
             _kernel = kernel;
         }

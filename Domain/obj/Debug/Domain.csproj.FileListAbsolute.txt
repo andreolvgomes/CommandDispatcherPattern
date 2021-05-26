@@ -7,3 +7,12 @@ C:\Projects\CommandDispatcherPattern\Domain\obj\Debug\Domain.dll
 C:\Projects\CommandDispatcherPattern\Domain\obj\Debug\Domain.pdb
 C:\Projects\CommandDispatcherPattern\Domain\bin\Debug\CommandDispatcher.dll
 C:\Projects\CommandDispatcherPattern\Domain\bin\Debug\CommandDispatcher.pdb
+C:\CommandDispatcherPattern\Domain\bin\Debug\Domain.dll
+C:\CommandDispatcherPattern\Domain\bin\Debug\Domain.pdb
+C:\CommandDispatcherPattern\Domain\bin\Debug\CommandDispatcher.dll
+C:\CommandDispatcherPattern\Domain\bin\Debug\CommandDispatcher.pdb
+C:\CommandDispatcherPattern\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\CommandDispatcherPattern\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\CommandDispatcherPattern\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\CommandDispatcherPattern\Domain\obj\Debug\Domain.dll
+C:\CommandDispatcherPattern\Domain\obj\Debug\Domain.pdb
