@@ -101,7 +101,7 @@ namespace CommandDispatcher
         /// <param name="params_constructor"></param>
         public void Function(IFunction function, object[] params_constructor = null, SqlTransaction transaction = null)
         {
-            var handlerType = (typeof(IFunctionHandler<,>).MakeGenericType(function.GetType()));
+            var handlerType = (typeof(IFunctionHandler<>).MakeGenericType(function.GetType()));
             dynamic handler = _serviceContainer.GetInstance(handlerType, params_constructor);
             handler.Handle((dynamic)function, transaction);
         }

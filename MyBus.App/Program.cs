@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using CommandDispatcher;
-using My.Tests.Events;
-using My.Tests.Queries;
-using MyBus.Tests.Commands;
+using Domain.Messenger;
+using MyBus.App.Functions;
 using Ninject;
 using Ninject.Activation.Blocks;
 
@@ -13,7 +12,17 @@ namespace MyBus.App
     {
         public static void Main(string[] args)
         {
-            IoCKernel.Ins.Init();
+            try
+            {
+                IoCKernel.Ins.Init();
+
+                var dispatcher = IoCKernel.Get<IDispatcher>();
+                dispatcher.Function(new ReturnResultDefaultFunction(1, 2));
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

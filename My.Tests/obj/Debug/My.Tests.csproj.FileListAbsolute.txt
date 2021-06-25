@@ -15,8 +15,8 @@ C:\CommandDispatcherPattern\My.Tests\bin\Debug\CommandDispatcher.dll
 C:\CommandDispatcherPattern\My.Tests\bin\Debug\Domain.dll
 C:\CommandDispatcherPattern\My.Tests\bin\Debug\CommandDispatcher.pdb
 C:\CommandDispatcherPattern\My.Tests\bin\Debug\Domain.pdb
-C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.csprojAssemblyReference.cache
 C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.csproj.CoreCompileInputs.cache
 C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.csproj.CopyComplete
 C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.dll
 C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.pdb
+C:\CommandDispatcherPattern\My.Tests\obj\Debug\My.Tests.csproj.AssemblyReference.cache

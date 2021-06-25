@@ -52,6 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Functions\ConcateNameFunction.cs" />
+    <Compile Include="Functions\Handlers\ConcateNameFunctionHandler.cs" />
+    <Compile Include="Functions\Handlers\ReturnResultDefaultFunctionHandler.cs" />
+    <Compile Include="Functions\ReturnResultDefaultFunction.cs" />
     <Compile Include="IoCKernel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,10 +74,11 @@
       <Project>{c183b29a-cc97-49d5-8c84-c7bd180f68b1}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\My.Tests\My.Tests.csproj">
-      <Project>{d17fc0fd-02c9-4eac-b954-54d959031dce}</Project>
-      <Name>My.Tests</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\Handlers\" />
+    <Folder Include="Events\Handlers\" />
+    <Folder Include="Queries\Handlers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

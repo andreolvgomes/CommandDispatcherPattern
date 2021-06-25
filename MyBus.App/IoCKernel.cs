@@ -2,12 +2,9 @@
 using System.Data.Common;
 using System.Data.SqlClient;
 using CommandDispatcher;
-using CommandDispatcher;
 using Domain.Messenger;
-using My.Tests.Events;
-using My.Tests.Queries;
-using MyBus.Tests.Commands;
-using MyBus.Tests.Events;
+using MyBus.App.Functions;
+using MyBus.App.Functions.Handlers;
 using Ninject;
 using Ninject.Activation.Blocks;
 using SimpleInjector;
@@ -44,13 +41,18 @@ namespace MyBus.App
             _kernel.Bind<IDispatcher>().To<Dispatcher>();
             _kernel.Bind<IServiceContainer>().To<ServiceContainerNinject>();
 
-            //_kernel.Bind(typeof(ICommandHandler<CreateNewProduct>)).To(typeof(CreateHandler));
-            //_kernel.Bind(typeof(ICommandHandler<EditNewProduct>)).To(typeof(EditHandler));
+            _kernel.Bind(typeof(IFunctionHandler<ConcateNameFunction, string>)).To(typeof(ConcateNameFunctionHandler));
+            _kernel.Bind(typeof(IFunctionHandler<ReturnResultDefaultFunction>)).To(typeof(ReturnResultDefaultFunctionHandler));
         }
 
-        public T Get<T>() where T : class
+        public T Instance<T>() where T : class
         {
             return _kernel.Get<T>();
+        }
+
+        public static T Get<T>() where T : class
+        {
+            return IoCKernel.Ins.Instance<T>();
         }
     }
 }
